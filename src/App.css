@@ -38,24 +38,19 @@
   align-items: center;
   justify-content: space-between;
 }
-
-/* HEADER NAVIGATION */
 .header-navigation {
   padding-top: 4px;
   height: 56px;
 }
-
 .header-navigation--items {
   display: flex;
   align-items: center;
 }
-
 .header-navigation--item {
   display: flex;
   align-items: flex-end;
   height: 56px;
 }
-
 .header-navigation--item a {
   display: flex;
   flex-direction: column;
@@ -64,48 +59,10 @@
   text-decoration: none;
   color: black;
 }
-
-.navlink-text {
-  font-family: "Raleway";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  /* identical to box height, or 19px */
-  text-transform: uppercase;
-  transition: 0.1s linear;
-}
-
-.navlink-border {
-  width: 97px;
-  height: 2px;
-  display: flex;
-  background: #ffffff;
-  flex: none;
-  align-self: stretch;
-  transition: 0.1s linear;
-}
-
-.header-navigation--item a:active > .navlink-text,
-.header-navigation--item a:hover > .navlink-text {
-  /* --c-primary */
-  color: #5ECE7B;
-  font-weight: 600;
-}
-
-.header-navigation--item a:active > .navlink-border,
-.header-navigation--item a:hover > .navlink-border {
-  /* --c-primary */
-  background-color: #5ECE7B;
-}
-
-/* HEADER LOGO */
 .header-logo {
   width: 41px;
   height: 41px;
 }
-
-/* HEADER ACTION */
 .header-actions {
   /* Actions */
   /* Auto layout */
@@ -118,7 +75,6 @@
   width: 204px;
   height: 40px;
 }
-
 .header-actions--container {
   width: 40px;
   height: 40px;
@@ -128,6 +84,37 @@
   align-items: center;
   padding: 0px 10px;
   gap: 12px;
+}
+
+.navlink-text {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height, or 19px */
+  text-transform: uppercase;
+  transition: 0.1s linear;
+}
+.navlink-border {
+  width: 97px;
+  height: 2px;
+  display: flex;
+  background: #ffffff;
+  flex: none;
+  align-self: stretch;
+  transition: 0.1s linear;
+}
+
+.header-navigation--item a:active > .navlink-text,
+.header-navigation--item a:hover > .navlink-text {
+  color: #5ECE7B;
+  font-weight: 600;
+}
+
+.header-navigation--item a:active > .navlink-border,
+.header-navigation--item a:hover > .navlink-border {
+  background-color: #5ECE7B;
 }
 
 /*# sourceMappingURL=App.css.map */
