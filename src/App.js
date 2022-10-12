@@ -1,12 +1,12 @@
 import './App.css';
 import React, { Component } from 'react'
-import Navbar from './components/Navbar';
 import { Routes, Route } from 'react-router-dom';
 import CategoryPage from './pages/CategoryPage';
 import PDPPage from './pages/PDPPage';
 import CartPage from './pages/CartPage';
 import NotFoundPage from './pages/NotFoundPage';
-import CartOverlayPage from './pages/CartOverlayPage';
+import Header from './layout/Header';
+//import CartOverlayPage from './pages/CartOverlayPage';
 
 
 
@@ -16,7 +16,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-      <Navbar/>
+      <Header/>
       <Routes>
         <Route path='/' >
           <Route index path='category/:name' element={<CategoryPage />}/>
