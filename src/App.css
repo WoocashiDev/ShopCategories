@@ -1,125 +1,133 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap");
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
- }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
- /* HEADER LAYOUT COMPONENT */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* HEADER LAYOUT COMPONENT */
 .header {
-    /* Header - Desktop */
-    display: flex;
-    position: fixed;
-    width: 100%;
-    height: 80px;
-    padding: 0 10%;
-    align-items: center;
-    justify-content: space-between;
-
+  /* Header - Desktop */
+  display: flex;
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  padding: 0 10%;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* HEADER NAVIGATION */
 .header-navigation {
-    padding-top: 4px;
-    height: 56px;
+  padding-top: 4px;
+  height: 56px;
 }
 
 .header-navigation--items {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .header-navigation--item {
-    display: flex;
-    align-items: flex-end;
-    height: 56px;
-
+  display: flex;
+  align-items: flex-end;
+  height: 56px;
 }
 
 .header-navigation--item a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    text-decoration: none;
-    color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  text-decoration: none;
+  color: black;
 }
 
-.navlink-text { 
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    /* identical to box height, or 19px */
-    
-    text-transform: uppercase;
-    transition: .1s linear;
+.navlink-text {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height, or 19px */
+  text-transform: uppercase;
+  transition: 0.1s linear;
 }
 
 .navlink-border {
-    width: 97px;
-    height: 2px;
-    display: flex;
-    background: #ffffff;
-    flex: none;
-    align-self: stretch;
-    transition: .1s linear;
+  width: 97px;
+  height: 2px;
+  display: flex;
+  background: #ffffff;
+  flex: none;
+  align-self: stretch;
+  transition: 0.1s linear;
 }
 
-.header-navigation--item a:active > .navlink-text, 
+.header-navigation--item a:active > .navlink-text,
 .header-navigation--item a:hover > .navlink-text {
-
-    /* --c-primary */
-    
-    color: #5ECE7B;
-    font-weight: 600;
+  /* --c-primary */
+  color: #5ECE7B;
+  font-weight: 600;
 }
 
-.header-navigation--item a:active > .navlink-border, 
+.header-navigation--item a:active > .navlink-border,
 .header-navigation--item a:hover > .navlink-border {
-
-    /* --c-primary */
-    
-    background-color: #5ECE7B;
+  /* --c-primary */
+  background-color: #5ECE7B;
 }
 
 /* HEADER LOGO */
 .header-logo {
-    width: 41px;
-    height: 41px;
+  width: 41px;
+  height: 41px;
 }
 
 /* HEADER ACTION */
 .header-actions {
-    /* Actions */
-    /* Auto layout */
-
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0px;
-    gap: 22px;
-
-    width: 204px;
-    height: 40px;
-
+  /* Actions */
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0px;
+  gap: 22px;
+  width: 204px;
+  height: 40px;
 }
 
 .header-actions--container {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 10px;
-    gap: 12px;
-} 
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 10px;
+  gap: 12px;
+}
 
-
-
-
-
+/*# sourceMappingURL=App.css.map */

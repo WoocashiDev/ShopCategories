@@ -1,4 +1,5 @@
 import './App.css';
+import './scss/styles.js';
 import React, { Component } from 'react'
 import { Routes, Route } from 'react-router-dom';
 import CategoryPage from './pages/CategoryPage';

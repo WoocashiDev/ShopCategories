@@ -6,11 +6,11 @@ import Actions from '../components/headerComponents/Actions'
 class Header extends Component {
     render() {
         return (
-            <header className="header">
-                <Navigation/>
-                <Logo />
-                <Actions />
-            </header>
+                <header className="header">
+                    <Navigation/>
+                    <Logo />
+                    <Actions />
+                </header>
         );
     }
 }
