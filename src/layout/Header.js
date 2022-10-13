@@ -6,11 +6,13 @@ import Actions from '../components/headerComponents/Actions'
 class Header extends Component {
     render() {
         return (
+                <div className="container-fixed on-top">
                 <header className="header">
                     <Navigation/>
                     <Logo />
                     <Actions />
                 </header>
+                </div>
         );
     }
 }

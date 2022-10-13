@@ -12,7 +12,7 @@ class Actions extends Component {
                     <NavLink to=""><img src={currencySvg } alt="currency-icon" /></NavLink>
                 </div>
                 <div className="header-actions--container">
-                    <NavLink to=""><img src={cartSvg } alt="cart-icon" /></NavLink>
+                    <NavLink to="/cart"><img src={cartSvg } alt="cart-icon" /></NavLink>
                 </div>
             </div>
         );
