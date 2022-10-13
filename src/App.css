@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
 /*SCSS Variables*/
 /*SCSS Mixins*/
 * {
@@ -58,6 +61,209 @@
   z-index: 1000;
 }
 
+.productpage {
+  padding-top: 160px;
+  display: flex;
+  justify-content: stretch;
+  gap: 30px;
+  padding-bottom: 80px;
+}
+.productpage-imagesmin {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.productpage-imagemin {
+  display: flex;
+  justify-content: stretch;
+  border: 1px transparent solid;
+  position: relative;
+  width: 79.5px;
+  height: 80px;
+  transition: 0.1s linear;
+}
+.productpage-imagemin:hover {
+  border: 1px rgb(94, 206, 123) solid;
+}
+.productpage-imagemin--image {
+  position: absolute;
+  top: 1px;
+  left: 1.25px;
+  width: 75px;
+  height: 76px;
+}
+.productpage-product {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 100px;
+}
+.productpage-product-sizes {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+}
+.productpage-product-size {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 63px;
+  height: 45px;
+  border: 1px solid black;
+  transition: 0.1s linear;
+}
+.productpage-product-size:hover {
+  background-color: black;
+  color: white;
+}
+.productpage-product-colors {
+  display: flex;
+  gap: 8px;
+}
+.productpage-product-colorbox {
+  width: 36px;
+  height: 36px;
+  border: 1px transparent solid;
+  position: relative;
+  transition: 0.1s linear;
+}
+.productpage-product-colorbox:hover {
+  border: 1px rgb(94, 206, 123) solid;
+}
+.productpage-product-color {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  background-color: blue;
+}
+.productpage-product--image {
+  width: 610px;
+}
+.productpage-product-description {
+  width: 292px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.productpage-product-description--brand {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 27px;
+}
+.productpage-product-description--name {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 27px;
+  margin-bottom: 27px;
+}
+.productpage-product-description--header {
+  font-family: "Roboto Condensed", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.productpage-product-description--price {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 18px;
+}
+.productpage-product-description--btn {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19.2px;
+  color: white;
+  text-transform: uppercase;
+  background-color: rgb(94, 206, 123);
+  display: flex;
+  justify-content: center;
+  padding: 16px 32px;
+  border: none;
+  transition: 0.1s linear;
+}
+.productpage-product-description--btn:hover {
+  background-color: rgb(88, 175, 111);
+  box-shadow: 0 4px 35px 0 rgba(168, 172, 176, 0.19);
+}
+.productpage-product-description--text {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+@media (max-width: 991px) {
+  .productpage {
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 10px;
+  }
+  .productpage-product {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .productpage-product--image {
+    width: 21.5em;
+  }
+  .productpage-product-description {
+    margin: 0 auto;
+  }
+}
+@media (min-width: 992px) {
+  .productpage {
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+  .productpage-product {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .productpage-product--image {
+    width: 30em;
+  }
+  .productpage-product-description {
+    margin: 0 0;
+  }
+}
+@media (min-width: 1280px) {
+  .productpage {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .productpage-product {
+    flex-direction: row;
+    gap: 50px;
+  }
+  .productpage-product--image {
+    width: 610px;
+  }
+  .productpage-product-description {
+    margin: 0 0;
+  }
+}
 /* HEADER LAYOUT COMPONENT */
 .header {
   /* Header - Desktop */
@@ -234,7 +440,7 @@
   align-self: stretch;
 }
 
-.categorypage-item:hover > .categorypage-item--image > .categorypage-item--cart {
+.categorypage-item:hover > .categorypage-item--image > a > .categorypage-item--cart {
   opacity: 100%;
 }
 

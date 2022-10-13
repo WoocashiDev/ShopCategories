@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import DefaultImage from '../../assets/images/default.png'
-import CartIcon from '../../assets/icons/category-cart.svg'
+import { Link } from 'react-router-dom';
+import DefaultImage from '../../assets/images/default.png';
+import CartIcon from '../../assets/icons/category-cart.svg';
 
 class CategoryPageItem extends Component {
     render() {
@@ -8,9 +9,11 @@ class CategoryPageItem extends Component {
             <div className="categorypage-item">
                 <div className="categorypage-item--image">
                     <img alt="product" src={DefaultImage} />
-                    <div className='categorypage-item--cart'>
-                        <img alt="add-to-cart" src={CartIcon} />
-                    </div>
+                    <Link to="/product/id">
+                        <div className='categorypage-item--cart'>
+                            <img alt="add-to-cart" src={CartIcon} />
+                        </div>
+                    </Link>
                 </div>
                 
                 <span className="categorypage-item--name">Product Name</span>

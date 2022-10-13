@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Roboto:wght@300;400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
 /*SCSS Variables*/
 $primary-color: rgb(94, 206, 123);
 $primary-color-darkened: rgb(88, 175, 111);
@@ -9,6 +15,22 @@ $primary-color-darkened: rgb(88, 175, 111);
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
+}
+
+@mixin secondary-font {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin secondary-font-condensed {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin size-font {
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 * {
