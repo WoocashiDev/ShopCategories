@@ -1,0 +1,99 @@
+/* HEADER LAYOUT COMPONENT */
+.header {
+    /* Header - Desktop */
+    background-color: white;
+    display: flex;
+    height: 80px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    &-navigation {
+      padding-top: 4px;
+      height: 56px;
+
+      &--items {
+        display: flex;
+        align-items: center;
+      }
+
+      &--item {
+        display: flex;
+        align-items: flex-end;
+        height: 56px;
+
+        a {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 30px;
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  &-logo {
+    width: 41px;
+    height: 41px;
+  }
+  &-actions {
+    /* Actions */
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px;
+    gap: 22px;
+    
+    width: 204px;
+    height: 40px;
+
+  &--container {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 10px;
+      gap: 12px;
+    } 
+  }
+}
+
+.navlink {
+  &-text {
+    @include primary-font;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 19px */
+    
+    text-transform: uppercase;
+    transition: .1s linear;
+  }
+
+  &-border {
+    width: 97px;
+    height: 2px;
+    display: flex;
+    background: #ffffff;
+    flex: none;
+    align-self: stretch;
+    transition: .1s linear;
+    box-shadow: 0 4px 35px 0 rgba(168, 172, 176, 0.19)
+  }
+}
+
+
+.header-navigation--item a:active > .navlink-text, 
+.header-navigation--item a:hover > .navlink-text {
+    color: $primary-color;
+    font-weight: 600;
+}
+
+.header-navigation--item a:active > .navlink-border, 
+.header-navigation--item a:hover > .navlink-border {
+    background-color: $primary-color;
+}
