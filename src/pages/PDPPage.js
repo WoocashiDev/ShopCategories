@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import ProductPageImagesMin from '../components/pageComponents/ProductPageImagesMin';
 import ProductPageProduct from '../components/pageComponents/ProductPageProduct';
+import ProductPageSlider from '../components/pageComponents/ProductPageSlider';
 
 export default class PDPPage extends Component {
   render() {
     return (
       <div className="container productpage">
-        <ProductPageImagesMin/>
+        <ProductPageSlider/>
         <ProductPageProduct/>
       </div>
     )

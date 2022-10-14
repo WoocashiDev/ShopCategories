@@ -93,9 +93,10 @@ $primary-color-darkened: rgb(88, 175, 111);
 }
 
 
-@import './pdp-styles.scss';
+@import './pdppage-styles.scss';
 @import './header-styles.scss';
-@import './categorypage-styles.scss'
+@import './categorypage-styles.scss';
+@import './product-styles.scss';
 
 
 

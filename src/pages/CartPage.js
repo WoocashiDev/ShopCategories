@@ -1,11 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import CartPageProduct from '../components/pageComponents/CartPageProduct';
+
 
 export default class CartPage extends Component {
   render() {
     return (
-      <div className="container">
-        <h1> cart page</h1>
-      </div>
+      <div className="container cartpage">
+        <CartPageProduct />
+        <CartPageProduct/>
+    </div>
     )
   }
 }

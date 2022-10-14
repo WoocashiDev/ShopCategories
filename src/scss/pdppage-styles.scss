@@ -1,0 +1,207 @@
+.productpage {
+    padding-top: 160px;
+    display: flex;
+    justify-content: stretch;
+    gap: 30px;
+    padding-bottom: 80px;
+
+    &-product {
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 100px;
+
+        &-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &-description-layout {
+            width: 292px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+    }
+
+    &-slider{
+        display: flex;
+        gap: 40px;
+        
+        &-image-main {
+            width: 610px;
+            display: flex;
+            align-items: stretch;
+        }
+
+        &-images-min {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        &-image-min {
+            display:flex;
+            justify-content: stretch;
+            border: 1px transparent solid;
+            position: relative;
+            width: 79.5px;
+            height: 80px;
+            transition: .1s linear;
+    
+            &:hover {
+                border: 1px $primary-color solid;
+            }
+    
+            &--image {
+                position:absolute;
+                top: 1px;
+                left:1.25px;
+                width: 75px;
+                height: 76px;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .productpage {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        
+        &-product {
+            flex-direction: column;
+            gap: 50px;
+            
+            &-description-layout {
+                margin: 0 auto;
+                min-width: 21.5em;
+                gap: 24px;
+            }
+
+            &-section {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        &-slider {
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+
+            &-image-main {
+                width: 21.5em;
+                display: flex;
+                align-items: stretch;
+            }
+
+            &-image-main > img {
+                width: 21.5em;
+                height:auto;
+            }
+
+            &-images-min {
+                flex-direction: row;
+                justify-self: flex-start;
+                gap: 20px;
+            }
+        }
+
+    }
+  }
+@media (min-width: 992px) {
+    .productpage {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        
+        &-product {
+            flex-direction: column;
+            gap: 50px;
+            min-width: 522px;
+
+            &-description-layout {
+                margin: 0 0;
+                gap: 24px;
+            }
+        }
+
+        &-slider {
+            gap: 20px;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+
+            &-image-main {
+                display: flex;
+                align-items: stretch;
+                justify-content: stretch;
+            }
+
+            &-image-main > img {
+                width: 560px;
+                height:auto;
+            }
+
+            &-images-min {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+    }
+  }
+@media (min-width: 1280px) {
+    .productpage {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 100px;
+        
+
+        &-product {
+            flex-direction: row;
+            gap: 50px;
+
+            &-description-layout {
+                margin: 0 0;
+                gap: 24px;
+            }
+
+            &-section {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        &-slider {
+            flex-direction: row;
+            justify-content: stretch;
+            align-items: stretch;
+            gap: 20px;
+
+            &-image-main {
+                display: flex;
+                align-items: stretch;
+            }
+
+            &-image-main > img {
+                width: 610px;
+                height:auto;
+            }
+
+            &-images-min {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    }
+  }

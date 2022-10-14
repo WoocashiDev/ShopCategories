@@ -1,0 +1,124 @@
+
+
+.product {
+            
+    &-title {
+            
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        &--brand {
+            @include primary-font;
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 27px;
+        }
+
+        &--name {
+            @include primary-font;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 27px;
+            margin-bottom: 27px;
+        }
+    }
+
+    &-sectiontitle {
+        @include secondary-font-condensed;
+        font-size: 18px;
+        line-height: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    &-price {
+        @include primary-font;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 18px;
+    }
+
+    &-description {
+        @include secondary-font;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    &-primary-btn {
+        @include primary-font;
+        font-weight: 600;
+        font-size: 16px;
+        line-height:19.2px;
+        color: white;
+        text-transform: uppercase;
+            
+        background-color: $primary-color;
+                
+        display: flex;
+        justify-content: center;
+        padding: 16px 32px;
+        border: none;
+        transition: .1s linear;
+                
+        &:hover {
+            background-color: $primary-color-darkened;
+            box-shadow: 0 4px 35px 0 rgba(168, 172, 176, 0.19);
+            }
+        }
+
+        &-colors {
+            display: flex;
+            gap: 8px;
+        }
+
+        &-colorbox {
+            width: 36px;
+            height: 36px;
+            border: 1px transparent solid;
+            position: relative;
+            transition: .1s linear;
+
+            &:hover {
+                border: 1px $primary-color solid;
+            }
+        }
+
+        &-color {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            left: 1px;
+            top: 1px;
+
+            background-color: blue;
+
+        }
+
+        &-sizes {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-start;
+        }
+
+        &-size {
+            @include size-font;
+            font-size: 16px;
+            line-height: 18px;
+            letter-spacing: 0.05em;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 63px;
+            height: 45px;
+            border: 1px solid black;
+            transition: .1s linear;
+
+            &:hover {
+                background-color: black;
+                color: white;
+            }
+        }
+    }
