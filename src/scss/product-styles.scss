@@ -20,7 +20,6 @@
             font-size: 30px;
             font-weight: 400;
             line-height: 27px;
-            margin-bottom: 27px;
         }
     }
 
@@ -36,7 +35,7 @@
         @include primary-font;
         font-weight: 700;
         font-size: 24px;
-        line-height: 18px;
+        line-height: 32px;
     }
 
     &-description {
@@ -71,6 +70,7 @@
         &-colors {
             display: flex;
             gap: 8px;
+            flex-wrap: wrap;
         }
 
         &-colorbox {
@@ -98,8 +98,9 @@
 
         &-sizes {
             display: flex;
-            gap: 12px;
+            gap: 8px;
             justify-content: flex-start;
+            flex-wrap:wrap;
         }
 
         &-size {

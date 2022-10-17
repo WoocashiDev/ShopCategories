@@ -1,0 +1,169 @@
+.cartpage {
+    padding-top: 160px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 80px;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 32px;
+
+    &-title {
+        @include primary-font;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 55px;
+        text-transform: uppercase;
+    }
+
+    &-product {
+        border-top: 1px solid rgba(229, 229, 229, 1);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 24px;
+        padding-bottom: 24px;
+
+        &:last-of-type {
+            border-bottom: 1px solid rgba(229, 229, 229, 1);
+        }
+
+        &-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &-choice-layout {
+            width: 279px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        
+        &-count-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &-count {
+            @include primary-font;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 38.4px;
+        }
+
+        &-button {
+            width: 45px;
+            height: 45px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgb(67, 68, 69);
+
+            &:hover {
+                background-color: black;
+                
+                &  > img  {
+                    filter: invert(1);
+                }
+            }
+
+        }
+
+        &-slider{
+        
+            &-layout {
+                display: flex;
+                position: relative;
+                gap: 24px;
+            }
+
+            &-image {
+                width: 200px;
+                height: 288px;
+            }
+
+            &-buttons {
+                display:flex;
+                flex-direction: row;
+                gap: 8px;
+                width: 56px;
+                height: 24px;
+                position: absolute;
+                bottom: 16px;
+                right: 16px;
+            }
+            &-button {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 24px;
+                height: 24px; 
+                background: rgba(0, 0, 0, 0.73);
+                transition: .1s linear;
+
+                &:hover {
+                    background-color: $primary-color-darkened;
+                    box-shadow: 0 4px 35px 0 rgba(168, 172, 176, 0.19);
+                    }
+                }
+            }
+    }
+
+    &-summary {
+        display: flex;
+        width: 279px;
+        gap: 8px;
+
+        &-labels {
+            display:flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &-labels > span {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 28px;
+        }
+
+        &-label-total {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 28px;
+        }
+
+    }
+
+    &-order-btn {
+        @include primary-font;
+        font-weight: 600;
+        font-size: 14px;
+        line-height:16.8px;
+        color: white;
+        text-transform: uppercase;
+        max-width: 279px;
+            
+        background-color: $primary-color;
+                
+        display: flex;
+        justify-content: center;
+        padding: 16px 32px;
+        border: none;
+        transition: .1s linear;
+                
+        &:hover {
+            background-color: $primary-color-darkened;
+            box-shadow: 0 4px 35px 0 rgba(168, 172, 176, 0.19);
+            }
+        }
+}

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ProductSectionTitle extends Component {
     render() {
         return (
-            <span class="product-sectiontitle">
+            <span className="product-sectiontitle">
                 {this.props.sectionTitle}
             </span>
         );
