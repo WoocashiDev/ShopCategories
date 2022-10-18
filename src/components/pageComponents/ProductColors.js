@@ -3,20 +3,15 @@ import React, { Component } from 'react';
 class ProductColors extends Component {
 
     render() {
+        const colors = this.props.colors
         return (
             <div className="product-colors">
-                <div className="product-colorbox">
-                    <div className="product-color">
+                {colors.map((color, key) => (
+                    <div key={key} className="product-colorbox">
+                        <div className="product-color" style={{background: color.value}}></div>
                     </div>
-                </div>
-                <div className="product-colorbox">
-                    <div className="product-color">
-                    </div>
-                </div>
-                <div className="product-colorbox">
-                    <div className="product-color">
-                    </div>
-                </div>
+                ))}
+            
             </div>
         );
     }

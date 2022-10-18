@@ -5,10 +5,10 @@ class ProductTitle extends Component {
         return (
             <div className="product-title">
                 <h3 className="product-title--brand">
-                        Apollo
+                        {this.props.brand}
                     </h3>
                     <h4 className="product-title--name">
-                        Running Short
+                    {this.props.name}
                 </h4>
             </div>
         );

@@ -4,37 +4,32 @@ import ProductSectionTitle from './ProductSectionTitle';
 import ProductPrice from './ProductPrice';
 import ProductPrimaryBtn from './ProductPrimaryBtn';
 import ProductDescription from './ProductDescription';
-import ProductColors from './ProductColors';
-import ProductSizes from './ProductSizes';
+import ProductPageSection from './ProductPageSection';
+
 
 
 class ProductPageProduct extends Component {
+
     render() {
+        const { name, brand, prices, attributes, description } = this.props.product
+        console.log(this.props.product)
         return (
             <div className='productpage-product'>
                 <div className="productpage-product-description-layout">
-                    <ProductTitle/>
-                    <div className='productpage-product-section'>
-                        <ProductSectionTitle sectionTitle="Size:" />
-                        <ProductSizes/>
-                    </div>
-                    <div className='productpage-product-section'>
-                        <ProductSectionTitle sectionTitle="Color:" />
-                        <ProductColors/>
-                    </div>
+                    <ProductTitle name={name} brand={brand} />
+                    {attributes.map((attribute, key) => (
+                        <ProductPageSection key={key} attribute={attribute}/> 
+                    ))}
+                    
                     <ProductSectionTitle sectionTitle="Price:" />
-                    <ProductPrice price="$50.00" />
+                    <ProductPrice currency={ prices[0].currency.symbol } price={ prices[0].amount } />
 
                     
                     <ProductPrimaryBtn text="Add to cart" />
                     
-                    <ProductDescription description="
-                    Find stunning women's cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses and party dresses from all your favorite brands."
-                    />
-                </div>
+                    <ProductDescription description={description}/>
 
-                
-                
+                </div>
             </div>
         );
     }

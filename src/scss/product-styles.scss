@@ -79,6 +79,7 @@
             border: 1px transparent solid;
             position: relative;
             transition: .1s linear;
+            box-shadow: 0 4px 35px 0 rgba(168, 172, 176, 0.6);
 
             &:hover {
                 border: 1px $primary-color solid;

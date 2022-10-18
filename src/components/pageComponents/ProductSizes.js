@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
 
+
 class ProductSizes extends Component {
     render() {
+        const sizes = this.props.sizes
         return (
             <div className='product-sizes'>
-                <div className="product-size">
-                    <span>XS</span>
-                </div>
-                <div className="product-size">
-                    <span>S</span>
-                </div>
-                <div className="product-size">
-                    <span>M</span>
-                </div>
-                <div className="product-size">
-                    <span>L</span>
-                </div>
+                {sizes.map((size, key) => (
+                    <div key={key } className="product-size">
+                        <span>{size.value}</span>
+                    </div>
+                ))}
             </div>
         );
     }

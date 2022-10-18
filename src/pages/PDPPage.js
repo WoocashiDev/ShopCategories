@@ -15,6 +15,16 @@ const productQuery = gql`
                 description
                 inStock
                 gallery
+                attributes {
+                  id
+                  name
+                  type
+                  items {
+                    displayValue
+                    value
+                    id
+                  }
+                }
                 prices {
                     amount
                     currency {
@@ -27,15 +37,16 @@ const productQuery = gql`
 `
 
 class PDPPage extends Component {
+
   render() {
     return (
       <div className="container productpage">
-        <Query query={productQuery} variables={{ id: this.props.router.params.id }}>
+        <Query fetchPolicy='network-only' query={productQuery} variables={{ id: this.props.router.params.id }}>
 
           {({ data, loading, error }) => {
             if (loading) return <p>Loading...</p>;
             if (error) return <p>Error</p>;
-
+            console.log(data.product)
             return (
               <>
                 <ProductPageSlider gallery={data.product.gallery} />
