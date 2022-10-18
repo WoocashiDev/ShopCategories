@@ -1,22 +1,53 @@
 import React, { Component } from 'react';
-import CategoryPageItem from '../components/pageComponents/CategoryPageItem'
+import CategoryPageItem from '../components/pageComponents/CategoryPageItem';
+import { gql  } from '@apollo/client';
+import { Query } from '@apollo/client/react/components';
+import { withRouter } from '../utils.js';
+
+
+const productsQuery = gql`
+    query Category($name: String!)    
+    {
+        category(input: {title: $name}) {
+            products {
+                id
+                name
+                inStock
+                gallery
+                prices {
+                    amount
+                    currency {
+                        label
+                        symbol
+                    }
+                }
+                }
+        }
+    }
+`
 
 class CategoryPage extends Component {
+
     render() {
-        return (
-            <div className="container categorypage">
-                <h1 className="categorypage-title">Category Page</h1>
-                <div className="categorypage-items">
-                    <CategoryPageItem />
-                    <CategoryPageItem />
-                    <CategoryPageItem />
-                    <CategoryPageItem />
-                    <CategoryPageItem />
-                    <CategoryPageItem/>
+            return (
+                <div className="container categorypage">
+                    <h1 className="categorypage-title">{this.props.router.params.name}</h1>
+                
+                    <Query query={productsQuery} variables={{name: this.props.router.params.name}}>
+                        {({ data, loading, error }) => {
+                            if (loading) return <p>Loading...</p>;
+                            if (error) return <p>Error</p>;
+
+                            return (
+                                <div className="categorypage-items">
+                                    {data.category.products.map((product, key) => (<CategoryPageItem key={key} product={product} />))}
+                                </div>
+                            )
+                        }}
+                    </Query>
                 </div>
-            </div>
-        );
+            )
     }
 }
 
-export default CategoryPage;
+export default withRouter(CategoryPage);

@@ -14,7 +14,7 @@
       margin-top: 80px;
       margin-bottom: 80px;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 40px;
       flex-wrap: wrap;
     }
@@ -40,6 +40,9 @@
         height: 330px;
         z-index: 50;
         position: relative;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
       }
   
       &--name {

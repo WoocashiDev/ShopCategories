@@ -32,8 +32,10 @@
         
         &-image-main {
             width: 610px;
-            display: flex;
-            align-items: stretch;
+            height: 511px;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
 
         &-images-min {
@@ -50,6 +52,9 @@
             width: 79.5px;
             height: 80px;
             transition: .1s linear;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
     
             &:hover {
                 border: 1px $primary-color solid;

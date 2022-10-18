@@ -91,8 +91,10 @@
 }
 .productpage-slider-image-main {
   width: 610px;
-  display: flex;
-  align-items: stretch;
+  height: 511px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .productpage-slider-images-min {
   display: flex;
@@ -107,6 +109,9 @@
   width: 79.5px;
   height: 80px;
   transition: 0.1s linear;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .productpage-slider-image-min:hover {
   border: 1px rgb(94, 206, 123) solid;
@@ -340,7 +345,7 @@
   margin-top: 80px;
   margin-bottom: 80px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 40px;
   flex-wrap: wrap;
 }
@@ -361,6 +366,9 @@
   height: 330px;
   z-index: 50;
   position: relative;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .categorypage-item--name {
   font-family: "Raleway";
