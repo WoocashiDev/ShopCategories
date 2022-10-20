@@ -5,6 +5,7 @@ import { gql  } from '@apollo/client';
 import { Query } from '@apollo/client/react/components';
 import { withRouter } from '../utils';
 
+
 const productQuery = gql`
     query Product($id: String!)    
     {
@@ -37,6 +38,8 @@ const productQuery = gql`
 `
 
 class PDPPage extends Component {
+
+
 
   render() {
     return (

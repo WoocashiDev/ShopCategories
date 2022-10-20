@@ -8,10 +8,6 @@ import CartPage from './pages/CartPage';
 import Header from './layout/Header';
 //import CartOverlayPage from './pages/CartOverlayPage';
 
-
-
-
-
 export default class App extends Component {
   render() {
     return (

@@ -148,7 +148,7 @@
   .productpage-slider {
     flex-direction: column-reverse;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 20px;
   }
   .productpage-slider-image-main {

@@ -5,6 +5,13 @@ import ProductColors from './ProductColors';
 
 class ProductPageSection extends Component {
 
+    selectAttribute = (e) => {
+        let attributeValue = e.target.getAttribute("data-value")
+        let attributeName = e.target.getAttribute("data-name")
+        console.log(attributeValue)
+        console.log(attributeName)
+    }
+
     render() {
         const {type, items, name} = this.props.attribute
         return (
@@ -12,7 +19,7 @@ class ProductPageSection extends Component {
                 <span className="product-sectiontitle">
                     {name}
                 </span>
-                {type==="swatch"?<ProductColors colors={items}/>:<ProductSizes sizes={items}/>}
+                {type === "swatch" ? <ProductColors onPress={this.props.onPress} name={name} colors={items}/>:<ProductSizes onPress={this.props.onPress} name={name} sizes={items}/>}
             </div>
         );
     }
