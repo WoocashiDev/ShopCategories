@@ -8,11 +8,11 @@ import { connect } from 'react-redux';
 class CartPage extends Component {
   render() {
     const cartItems = this.props.cartItems
-    console.log(cartItems)
+
     return (
       <div className="container cartpage">
         <h3 className="cartpage-title">Cart</h3>
-        {cartItems.map((item, key) => (<CartPageProduct key={key} cartItem={item} />))}
+        {cartItems.map((item, key) => (item?<CartPageProduct key={key} cartItem={item} />:""))}
         <CartPageSummary />
         <CartPageOrderBtn text="order"/>
     </div>

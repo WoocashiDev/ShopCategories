@@ -20,8 +20,7 @@ class CartPageSection extends Component {
 
     render() {
         const { type, items, name } = this.props.attribute
-        console.log(this.props.selectedAttributes)
-        console.log(this.state)
+
         return (
             <div className='cartpage-product-section'>
                 <span className="product-sectiontitle">

@@ -7,17 +7,17 @@ export const addItem = (item, selectedAttributes) => {
     }
 }
 
-export const editItem = (item, selectedAttributes) => {
+export const changeQuantity = (item, quantity) => {
     return {
-        type: 'EDIT_ITEM',
-        item: item,
-        attributes: selectedAttributes
+        type: 'CHANGE_QUANTITY',
+        itemName: item,
+        quantity: quantity
     }
 }
 
 export const removeItem = (item) => {
     return {
         type: 'REMOVE_ITEM',
-        payload: item
+        itemName: item
     }
 }

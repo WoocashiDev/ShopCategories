@@ -8,17 +8,24 @@ const cartItemReducer = (state=[], action)=> {
                     quantity: 1
                 }
             ]
-        case "EDIT_ITEM":
-            return [
-                ...state, {
-                    item: action.item,
-                    selectedAttributes: action.attributes,
-                    quantity: 1
+        case "CHANGE_QUANTITY":
+            const changedItem = state.map(stateitem => {     
+                if (stateitem.item.name === action.itemName) {
+                    return {...stateitem, quantity: action.quantity}
                 }
-
-            ]
+                return stateitem
+            })
+            return changedItem
+        
         case "REMOVE_ITEM":
-            return state - action.payload
+            const leftItems = state.item.filter(stateitem => {
+                return stateitem !== action.itemName
+                
+            })
+            delete state.item[action.itemName]
+            return state
+
+    
         default:
             return state
     }   

@@ -67,8 +67,6 @@ class ProductPageProduct extends Component {
 
         render() {
             const { name, brand, prices, attributes, description } = this.props.product
-            console.log(this.state.selectedAttributes)
-            
         
             return (
                 <div className='productpage-product'>

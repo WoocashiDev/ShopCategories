@@ -6,7 +6,7 @@ class ProductSizes extends Component {
 
     
     render() {
-        console.log(this.props.activeAttribute)
+
         const {sizes, name} = this.props
         return (
             <div className='product-sizes'>

@@ -3,12 +3,16 @@ import ArrowLeft from "../../assets/icons/arrow-left.svg";
 import ArrowRight from "../../assets/icons/arrow-right.svg";
 import PlusIcon from "../../assets/icons/plus.svg";
 import MinusIcon from "../../assets/icons/minus.svg";
+import {connect} from 'react-redux';
+import { changeQuantity, removeItem } from '../../actions/index';
 
 class CartPageSlider extends Component {
 
     state = {
-        activeImage: 0
+        activeImage: 0,
+        quantity: 1
     }
+
 
     nextImage = () => {
         this.state.activeImage < this.props.gallery.length-1?this.setState({activeImage: this.state.activeImage+1}):this.setState({activeImage: 0})
@@ -19,17 +23,32 @@ class CartPageSlider extends Component {
         this.state.activeImage === 0?this.setState({activeImage: this.props.gallery.length-1}):this.setState({activeImage: this.state.activeImage-1})
     }
 
+    addItem = () => {
+        this.props.changeQuantity(this.props.item.name, this.state.quantity)
+        this.setState({quantity: this.state.quantity+1})
+        
+    }
+
+    subtractItem = () => {
+        if (this.state.quantity >= 1) {
+            this.props.changeQuantity(this.props.item.name, this.state.quantity)
+            this.setState({ quantity: this.state.quantity - 1 })
+        } else {
+            this.props.removeItem(this.props.item.name)
+        }
+        
+    }
+
 
     render() {
-        console.log(this.props.gallery)
-        console.log(this.state.activeImage)
+
         const {gallery} = this.props
         return (
             <div className="cartpage-product-slider-layout">
                 <div className='cartpage-product-count-group'>
-                    <div className='cartpage-product-button'><img src={PlusIcon } alt="add" /></div>
-                    <div className='cartpage-product-count'>2</div>
-                    <div className='cartpage-product-button'><img src={MinusIcon } alt="remove" /></div>
+                    <div onClick={()=> {this.addItem()} } className='cartpage-product-button'><img src={PlusIcon } alt="add" /></div>
+                    <div className='cartpage-product-count'>{this.state.quantity}</div>
+                    <div onClick={()=> {this.subtractItem()} }className='cartpage-product-button'><img src={MinusIcon } alt="remove" /></div>
                 </div>
                 <div className="cartpage-product-slider-image" style={{
                     backgroundImage: `url(${gallery[this.state.activeImage]})`,
@@ -50,4 +69,8 @@ class CartPageSlider extends Component {
     }
 }
 
-export default CartPageSlider;
+const mapStateToProps = state => ({
+    cartItems: state.cartItems
+})
+
+export default connect(mapStateToProps, {changeQuantity, removeItem}) (CartPageSlider);

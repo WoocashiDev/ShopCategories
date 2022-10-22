@@ -5,7 +5,6 @@ import ProductPrice from './ProductPrice';
 import CartPageSlider from './CartPageSlider';
 import CartPageSection from './CartPageSection';
 import { connect } from "react-redux";
-import { editItem } from '../../actions/index';
 
 class CartPageProduct extends Component {
 
@@ -41,7 +40,7 @@ class CartPageProduct extends Component {
     
     render() {  
         const { name, brand, prices, attributes, gallery } = this.props.cartItem.item
-        const selectedAttributes = this.props.cartItem.selectedAttributes
+        const {selectedAttributes} = this.props.cartItem
         
         return (
             <div className='cartpage-product'>
@@ -55,7 +54,7 @@ class CartPageProduct extends Component {
                             <CartPageSection selectedAttributes={selectedAttributes} onPress={(e) => this.selectAttribute(e)} key={key} attribute={attribute} />
                         ))}
                 </div>
-                <CartPageSlider gallery={gallery}/>
+                <CartPageSlider item={this.props.cartItem.item} gallery={gallery}/>
             </div>
         );
     }
@@ -65,4 +64,4 @@ const mapStateToProps = state => ({
     cartItems: state.cartItems
 })
 
-export default connect(mapStateToProps, {editItem})(CartPageProduct);
+export default connect(mapStateToProps, null)(CartPageProduct);

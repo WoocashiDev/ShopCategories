@@ -9,7 +9,6 @@ class Actions extends Component {
 
 
     render() {
-        console.log(this.props.cartItems)
         return (
             <div className="header-actions">
                 <div className="header-actions--container">
