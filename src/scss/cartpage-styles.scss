@@ -85,6 +85,9 @@
             &-image {
                 width: 200px;
                 height: 288px;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
             }
 
             &-buttons {

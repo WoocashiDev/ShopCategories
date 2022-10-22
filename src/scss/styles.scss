@@ -92,6 +92,10 @@ $primary-color-darkened: rgb(88, 175, 111);
   z-index: 1000;
 }
 
+.bg-white {
+  background: white;
+}
+
 
 @import './pdppage-styles.scss';
 @import './header-styles.scss';

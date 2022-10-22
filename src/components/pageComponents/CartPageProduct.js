@@ -40,7 +40,7 @@ class CartPageProduct extends Component {
     }
     
     render() {  
-        const { name, brand, prices, attributes } = this.props.cartItem.item
+        const { name, brand, prices, attributes, gallery } = this.props.cartItem.item
         const selectedAttributes = this.props.cartItem.selectedAttributes
         
         return (
@@ -55,7 +55,7 @@ class CartPageProduct extends Component {
                             <CartPageSection selectedAttributes={selectedAttributes} onPress={(e) => this.selectAttribute(e)} key={key} attribute={attribute} />
                         ))}
                 </div>
-                <CartPageSlider/>
+                <CartPageSlider gallery={gallery}/>
             </div>
         );
     }
