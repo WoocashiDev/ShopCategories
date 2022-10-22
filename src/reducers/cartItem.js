@@ -3,9 +3,19 @@ const cartItemReducer = (state=[], action)=> {
         case "ADD_ITEM":
             return [
                 ...state, {
-                    item: action.payload,
+                    item: action.item,
+                    selectedAttributes: action.attributes,
                     quantity: 1
                 }
+            ]
+        case "EDIT_ITEM":
+            return [
+                ...state, {
+                    item: action.item,
+                    selectedAttributes: action.attributes,
+                    quantity: 1
+                }
+
             ]
         case "REMOVE_ITEM":
             return state - action.payload

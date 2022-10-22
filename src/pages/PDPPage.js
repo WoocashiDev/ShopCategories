@@ -49,7 +49,6 @@ class PDPPage extends Component {
           {({ data, loading, error }) => {
             if (loading) return <p>Loading...</p>;
             if (error) return <p>Error</p>;
-            console.log(data.product)
             return (
               <>
                 <ProductPageSlider gallery={data.product.gallery} />

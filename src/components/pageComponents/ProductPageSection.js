@@ -5,21 +5,37 @@ import ProductColors from './ProductColors';
 
 class ProductPageSection extends Component {
 
-    selectAttribute = (e) => {
-        let attributeValue = e.target.getAttribute("data-value")
-        let attributeName = e.target.getAttribute("data-name")
-        console.log(attributeValue)
-        console.log(attributeName)
+    state = {
+        value: ""
     }
 
+    getSelectedValue = () => {
+        const selectedValue = this.props.selectedAttributes.filter(attribute => {
+            return attribute.name === this.props.attribute.name
+        })
+        return selectedValue[0]
+    }
+
+    componentDidMount() {
+        this.setState({value: this.getSelectedValue().value})
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps !== this.props) {
+            this.setState({value: this.getSelectedValue().value})
+        }
+    }
+
+
     render() {
-        const {type, items, name} = this.props.attribute
+        const { type, items, name } = this.props.attribute
+
         return (
             <div className='productpage-product-section'>
                 <span className="product-sectiontitle">
                     {name}
                 </span>
-                {type === "swatch" ? <ProductColors onPress={this.props.onPress} name={name} colors={items}/>:<ProductSizes onPress={this.props.onPress} name={name} sizes={items}/>}
+                {type === "swatch" ? <ProductColors onPress={this.props.onPress} name={name} colors={items} activeAttribute={this.state.value} /> : <ProductSizes onPress={this.props.onPress} name={name} sizes={items} activeAttribute={this.state.value} />}
             </div>
         );
     }

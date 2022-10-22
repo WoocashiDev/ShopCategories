@@ -1,8 +1,17 @@
 
-export const addItem = (item) => {
+export const addItem = (item, selectedAttributes) => {
     return {
         type: 'ADD_ITEM',
-        payload: item
+        item: item,
+        attributes: selectedAttributes
+    }
+}
+
+export const editItem = (item, selectedAttributes) => {
+    return {
+        type: 'EDIT_ITEM',
+        item: item,
+        attributes: selectedAttributes
     }
 }
 

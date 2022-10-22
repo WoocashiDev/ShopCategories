@@ -14,7 +14,7 @@ class ProductPageSlider extends Component {
     }
 
     render() {
-        console.log(this.props)
+
         return (
             <div className="productpage-slider">
                 <div className='productpage-slider-images-min'>

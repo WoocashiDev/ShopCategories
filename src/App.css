@@ -505,6 +505,9 @@
 .product-colorbox:hover {
   border: 1px rgb(94, 206, 123) solid;
 }
+.product-colorbox-active {
+  border: 1px rgb(94, 206, 123) solid;
+}
 .product-color {
   width: 32px;
   height: 32px;
@@ -533,6 +536,10 @@
   transition: 0.1s linear;
 }
 .product-size:hover {
+  background-color: black;
+  color: white;
+}
+.product-size-active {
   background-color: black;
   color: white;
 }

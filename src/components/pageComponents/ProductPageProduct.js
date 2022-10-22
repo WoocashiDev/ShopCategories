@@ -6,7 +6,7 @@ import ProductPrimaryBtn from './ProductPrimaryBtn';
 import ProductDescription from './ProductDescription';
 import ProductPageSection from './ProductPageSection';
 import { connect } from "react-redux";
-import { addItem, removeItem } from '../../actions/index';
+import { addItem } from '../../actions/index';
 
 
 
@@ -17,71 +17,81 @@ class ProductPageProduct extends Component {
         selectedAttributes: []
     }
 
+
+    getInitialAttributes = () => {
+        const attribArray = this.props.product.attributes.map((attr) => (
+            {
+                name: attr.name,
+                value: attr.items[0].value,
+                displayValue: attr.items[0].displayValue
+
+            }
+                
+        ))
+        return attribArray
+    }
+
     componentDidMount() {
-        this.setState({item:this.props.product})
+        this.setState({
+            
+            selectedAttributes: this.getInitialAttributes(),
+            item: this.props.product
+            
+        })
     }
 
     addToCart = () => {
-        this.props.addItem(this.state.item)
+        this.props.addItem(this.state.item, this.state.selectedAttributes)
     }
+
 
     selectAttribute = (e) => {
         const attributeValue = e.target.getAttribute("data-value")
         const attributeName = e.target.getAttribute("data-name")
-        console.log(attributeValue)
-        console.log(attributeName)
+        const attributeDisplayValue = e.target.getAttribute("data-displayvalue")
 
-        const isFound = () => {this.state.selectedAttributes.some(element => {
-            if (element.name === attributeName) {
-                console.log(element.name)
-                console.log(attributeName)
-              return true;
-            } else {
-                return false;
-            } 
-          });} 
-        
-        const selectedAtrribute = {
-            name: attributeName,
-            value: attributeValue
-        }
+        const newState = this.state.selectedAttributes.map((attr) => {
+            if (attr.name === attributeName) {
+                const newObject = {
+                    name: attributeName,
+                    value: attributeValue,
+                    displayValue: attributeDisplayValue
+                }
+                return newObject
+            } else return {name: attr.name, value:attr.value, displayValue:attr.displayValue}
+        })
 
-        if (isFound) {
-            console.log("true")
-            return 
-        } else {
-            this.setState({selectedAttributes: this.state.selectedAttributes.push(selectedAtrribute)})
-        }
+       this.setState({selectedAttributes:newState})
+
     }
 
-
-
-    render() {
-        console.log(this.props)
-        console.log(this.state)
-        const { name, brand, prices, attributes, description } = this.props.product
+        render() {
+            const { name, brand, prices, attributes, description } = this.props.product
+            console.log(this.state.selectedAttributes)
+            
         
-        return (
-            <div className='productpage-product'>
-                <div className="productpage-product-description-layout">
-                    <ProductTitle name={name} brand={brand} />
-                    {attributes.map((attribute, key) => (
-                        <ProductPageSection onPress={(e)=> this.selectAttribute(e)} key={key} attribute={attribute}/> 
-                    ))}
+            return (
+                <div className='productpage-product'>
+                    <div className="productpage-product-description-layout">
+                        <ProductTitle name={name} brand={brand} />
+                        {attributes.map((attribute, key) => (
+                            <ProductPageSection onPress={(e) => this.selectAttribute(e)} key={key} attribute={attribute} selectedAttributes={this.state.selectedAttributes.length !== 0?this.state.selectedAttributes:this.getInitialAttributes()} />
+                        ))}
                     
-                    <ProductSectionTitle getAttributes={ this.getAttributes } sectionTitle="Price:" />
-                    <ProductPrice currency={ prices[0].currency.symbol } price={ prices[0].amount } />
+                        <ProductSectionTitle getAttributes={this.getAttributes} sectionTitle="Price:" />
+                        <ProductPrice currency={prices[0].currency.symbol} price={prices[0].amount} />
 
                     
-                    <ProductPrimaryBtn onPress={() =>  this.addToCart() } text="Add to cart" />
+                        <ProductPrimaryBtn onPress={() => this.addToCart()} text="Add to cart" />
                     
-                    <ProductDescription description={description}/>
+                        <ProductDescription description={description} />
 
+                    </div>
                 </div>
-            </div>
-        );
+            );
+        }
     }
-}
+
 
 const mapStateToProps = state => ({
     cartItems: state.cartItems
