@@ -45,6 +45,22 @@
         line-height: 26px;
     }
 
+    &-disabled-btn {
+        @include primary-font;
+        font-weight: 600;
+        font-size: 16px;
+        line-height:19.2px;
+        color: black;
+        text-transform: uppercase;
+
+        display: flex;
+        justify-content: center;
+        padding: 16px 32px;
+        border: none;
+
+        background-color:rgb(114, 114, 114)
+    }
+        
     &-primary-btn {
         @include primary-font;
         font-weight: 600;

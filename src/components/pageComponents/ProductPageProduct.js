@@ -66,7 +66,7 @@ class ProductPageProduct extends Component {
     }
 
         render() {
-            const { name, brand, prices, attributes, description } = this.props.product
+            const { name, brand, prices, attributes, description, inStock } = this.props.product
         
             return (
                 <div className='productpage-product'>
@@ -79,8 +79,8 @@ class ProductPageProduct extends Component {
                         <ProductSectionTitle getAttributes={this.getAttributes} sectionTitle="Price:" />
                         <ProductPrice currency={prices[0].currency.symbol} price={prices[0].amount} />
 
-                    
-                        <ProductPrimaryBtn onPress={() => this.addToCart()} text="Add to cart" />
+                        
+                        {inStock?<ProductPrimaryBtn onPress={() => this.addToCart()} text="Add to cart" />:<button className="product-disabled-btn">Out of stock</button>}
                     
                         <ProductDescription description={description} />
 

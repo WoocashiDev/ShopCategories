@@ -33,8 +33,26 @@
         box-shadow: 0 4px 35px 0 rgba(168, 172, 176, 0.19)
       }
   
-      
-  
+      &--soldout {
+        width: 356px;
+        height: 338px;
+        position: absolute;
+        background-color: white;
+        opacity: 0.5;
+        top: 0px;
+        left: 0px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+
+        @include primary-font;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 38.4px;
+        color: rgba(141, 143, 154, 1);
+        text-transform: uppercase;
+      }
+
       &--image {
         width: 354px;
         height: 330px;
@@ -97,7 +115,7 @@
     }
   }
   
-  .categorypage-item:hover > .categorypage-item--image > a >.categorypage-item--cart {
+  .categorypage-item:hover > a > .categorypage-item--image > a >.categorypage-item--cart {
     opacity: 100%;
   }
   
