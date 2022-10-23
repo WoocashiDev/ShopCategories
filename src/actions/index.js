@@ -15,9 +15,9 @@ export const changeQuantity = (item, quantity) => {
     }
 }
 
-export const removeItem = (item) => {
+export const removeItem = (newState) => {
     return {
         type: 'REMOVE_ITEM',
-        itemName: item
+        payload: newState
     }
 }

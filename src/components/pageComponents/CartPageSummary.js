@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class CartPageSummary extends Component {
+class CartPageSummary extends Component {
+
+  calculateQuantity = () => {
+    const quantity = this.props.cartItems.reduce((accumulator, object) => {
+      return accumulator + object.quantity
+    }, 0);
+    return quantity
+  }
   render() {
+    console.log(this.calculateQuantity())
     return (
 
         <div className="cartpage-summary">
@@ -19,3 +28,9 @@ export default class CartPageSummary extends Component {
           )
   }
 }
+
+const mapStateToProps = state => ({
+  cartItems: state.cartItems
+})
+
+export default connect(mapStateToProps, null) (CartPageSummary)

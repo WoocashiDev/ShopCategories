@@ -17,15 +17,6 @@ const cartItemReducer = (state=[], action)=> {
             })
             return changedItem
         
-        case "REMOVE_ITEM":
-            const leftItems = state.item.filter(stateitem => {
-                return stateitem !== action.itemName
-                
-            })
-            delete state.item[action.itemName]
-            return state
-
-    
         default:
             return state
     }   

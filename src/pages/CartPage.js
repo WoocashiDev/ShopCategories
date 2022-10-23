@@ -6,13 +6,16 @@ import { connect } from 'react-redux';
 
 
 class CartPage extends Component {
+
+
+
+  
   render() {
     const cartItems = this.props.cartItems
-
     return (
       <div className="container cartpage">
         <h3 className="cartpage-title">Cart</h3>
-        {cartItems.map((item, key) => (item?<CartPageProduct key={key} cartItem={item} />:""))}
+        {cartItems.map((item, key) => (<CartPageProduct key={key} cartItem={item} />))}
         <CartPageSummary />
         <CartPageOrderBtn text="order"/>
     </div>
@@ -24,4 +27,4 @@ const mapStateToProps = state => ({
   cartItems: state.cartItems
 })
 
-export default connect(mapStateToProps) (CartPage)
+export default connect(mapStateToProps, null) (CartPage)

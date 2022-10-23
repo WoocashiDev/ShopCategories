@@ -24,25 +24,32 @@ class CartPageSlider extends Component {
     }
 
     addItem = () => {
-        this.props.changeQuantity(this.props.item.name, this.state.quantity)
-        this.setState({quantity: this.state.quantity+1})
         
+        this.setState({quantity: this.state.quantity+1})
     }
 
     subtractItem = () => {
-        if (this.state.quantity >= 1) {
-            this.props.changeQuantity(this.props.item.name, this.state.quantity)
+        if (this.state.quantity > 0) {
+
             this.setState({ quantity: this.state.quantity - 1 })
-        } else {
-            this.props.removeItem(this.props.item.name)
-        }
+        } 
         
+    }
+
+    componentDidMount() {
+        this.setState({quantity: this.props.quantity})
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+       if (this.state.quantity !== prevState.quantity) {
+           this.props.changeQuantity(this.props.item.name, this.state.quantity)
+       }
     }
 
 
     render() {
 
-        const {gallery} = this.props
+        const {gallery, item, quantity} = this.props
         return (
             <div className="cartpage-product-slider-layout">
                 <div className='cartpage-product-count-group'>
