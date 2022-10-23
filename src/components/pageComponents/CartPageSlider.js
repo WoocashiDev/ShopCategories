@@ -33,7 +33,6 @@ class CartPageSlider extends Component {
 
             this.setState({ quantity: this.state.quantity - 1 })
         } 
-        
     }
 
     componentDidMount() {
@@ -49,7 +48,7 @@ class CartPageSlider extends Component {
 
     render() {
 
-        const {gallery, item, quantity} = this.props
+        const {gallery} = this.props
         return (
             <div className="cartpage-product-slider-layout">
                 <div className='cartpage-product-count-group'>
