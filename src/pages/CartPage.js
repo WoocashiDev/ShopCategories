@@ -15,9 +15,9 @@ class CartPage extends Component {
     return (
       <div className="container cartpage">
         <h3 className="cartpage-title">Cart</h3>
-        {cartItems.map((item, key) => (<CartPageProduct key={key} cartItem={item} />))}
-        <CartPageSummary />
-        <CartPageOrderBtn text="order"/>
+        {cartItems.map((item, key) => (<CartPageProduct small={false} key={key} cartItem={item} />))}
+        <CartPageSummary small={false} />
+        <CartPageOrderBtn small={false} text="order"/>
     </div>
     )
   }

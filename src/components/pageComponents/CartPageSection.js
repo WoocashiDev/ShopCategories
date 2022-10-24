@@ -20,13 +20,14 @@ class CartPageSection extends Component {
 
     render() {
         const { type, items, name } = this.props.attribute
+        const small = this.props.small
 
         return (
-            <div className='cartpage-product-section'>
-                <span className="product-sectiontitle">
+            <div className={small?'small-cartpage-product-section':'cartpage-product-section' }>
+                <span className={small ? "small-product-sectiontitle" :"product-sectiontitle"}>
                     {name}
                 </span>
-                {type === "swatch" ? <ProductColors onPress={this.props.onPress} name={name} activeAttribute={this.state.value} colors={items}/>:<ProductSizes activeAttribute={this.state.value}  onPress={this.props.onPress} name={name} sizes={items}/>}
+                {type === "swatch" ? <ProductColors small={small} onPress={this.props.onPress} name={name} activeAttribute={this.state.value} colors={items}/>:<ProductSizes small={small} activeAttribute={this.state.value}  onPress={this.props.onPress} name={name} sizes={items}/>}
             </div>
         );
     }

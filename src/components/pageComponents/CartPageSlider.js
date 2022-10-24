@@ -48,18 +48,18 @@ class CartPageSlider extends Component {
 
     render() {
 
-        const {gallery} = this.props
+        const {gallery, small} = this.props
         return (
-            <div className="cartpage-product-slider-layout">
-                <div className='cartpage-product-count-group'>
-                    <div onClick={()=> {this.addItem()} } className='cartpage-product-button'><img src={PlusIcon } alt="add" /></div>
-                    <div className='cartpage-product-count'>{this.state.quantity}</div>
-                    <div onClick={()=> {this.subtractItem()} }className='cartpage-product-button'><img src={MinusIcon } alt="remove" /></div>
+            <div className={small?"small-cartpage-product-slider-layout":"cartpage-product-slider-layout" }>
+                <div className={small? 'small-cartpage-product-count-group' : 'cartpage-product-count-group'}>
+                    <div onClick={() => { this.addItem() }} className={small ? 'small-cartpage-product-button' : 'cartpage-product-button'}><img src={PlusIcon } alt="add" /></div>
+                    <div className={small ? 'small-cartpage-product-count' : 'cartpage-product-count'}>{this.state.quantity}</div>
+                    <div onClick={()=> {this.subtractItem()} }className={small ? 'small-cartpage-product-button' : 'cartpage-product-button'}><img src={MinusIcon } alt="remove" /></div>
                 </div>
-                <div className="cartpage-product-slider-image" style={{
+                <div className={small ? "small-cartpage-product-slider-image": "cartpage-product-slider-image"} style={{
                     backgroundImage: `url(${gallery[this.state.activeImage]})`,
                 }}>
-                    {gallery.length===1?"":<div className="cartpage-product-slider-buttons">
+                    {gallery.length===1 || small?"":<div className="cartpage-product-slider-buttons">
                         
                         <div onClick={()=>{this.prevImage()} } className="cartpage-product-slider-button">
                             <img src={ArrowLeft} alt="previous"/>

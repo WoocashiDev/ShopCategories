@@ -35,7 +35,7 @@ class ProductPageSection extends Component {
                 <span className="product-sectiontitle">
                     {name}
                 </span>
-                {type === "swatch" ? <ProductColors onPress={this.props.onPress} name={name} colors={items} activeAttribute={this.state.value} /> : <ProductSizes onPress={this.props.onPress} name={name} sizes={items} activeAttribute={this.state.value} />}
+                {type === "swatch" ? <ProductColors onPress={this.props.onPress} name={name} colors={items} activeAttribute={this.state.value} /> : <ProductSizes small={false} onPress={this.props.onPress} name={name} sizes={items} activeAttribute={this.state.value} />}
             </div>
         );
     }

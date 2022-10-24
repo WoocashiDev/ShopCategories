@@ -41,21 +41,22 @@ class CartPageProduct extends Component {
     render() {
         const { name, brand, prices, attributes, gallery } = this.props.cartItem.item
         const { selectedAttributes } = this.props.cartItem
+        const small = this.props.small
         
         return (
+            <div className ={small?"small-cartpage-product":"cartpage-product"} >
+                <div className={small ? "small-cartpage-product-choice-layout" : "cartpage-product-choice-layout"}>
+                    <ProductTitle small={small} name={name} brand={brand} />
 
-            <div className = 'cartpage-product' >
-                <div className="cartpage-product-choice-layout">
-                    <ProductTitle name={name} brand={brand} />
-
-                    <ProductSectionTitle getAttributes={this.getAttributes} sectionTitle="Price:" />
-                    <ProductPrice currency={prices[0].currency.symbol} price={prices[0].amount} />
+                    {small ? "" : <ProductSectionTitle getAttributes={this.getAttributes} sectionTitle="Price:" />}
+                    <ProductPrice small={small} currency={prices[0].currency.symbol} price={prices[0].amount} />
                     
                     {attributes.map((attribute, key) => (
-                            <CartPageSection selectedAttributes={selectedAttributes} onPress={(e) => this.selectAttribute(e)} key={key} attribute={attribute} />
+                            <CartPageSection small={small} selectedAttributes={selectedAttributes} onPress={(e) => this.selectAttribute(e)} key={key} attribute={attribute} />
                         ))}
                 </div>
-                <CartPageSlider quantity={this.props.cartItem.quantity} item={this.props.cartItem.item} gallery={gallery}/>
+                <CartPageSlider small={small} quantity={this.props.cartItem.quantity} item={this.props.cartItem.item} gallery={gallery}/>
+                
             </div >
         );
     }
