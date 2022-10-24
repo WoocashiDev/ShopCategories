@@ -8,6 +8,7 @@
       margin-top: 60px;
       display: block;
       @include primary-font;
+      text-transform: capitalize;
     }
   
     &-items {

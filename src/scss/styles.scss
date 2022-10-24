@@ -101,7 +101,23 @@ $primary-color-darkened: rgb(88, 175, 111);
 @import './header-styles.scss';
 @import './categorypage-styles.scss';
 @import './product-styles.scss';
-@import './cartpage-styles.scss'
+@import './cartpage-styles.scss';
+@import './loader-styles.scss';
+@import './cartdropdown-styles.scss';
 
 
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary-color;;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-color-darkened;
+}

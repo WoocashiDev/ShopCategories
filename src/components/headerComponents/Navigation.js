@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 import { Query } from '@apollo/client/react/components';
 import { gql } from '@apollo/client';
+import Loader from '../pageComponents/Loader';
 
 
 class Navigation extends Component {
@@ -20,7 +21,7 @@ class Navigation extends Component {
                 
                     <Query query={this.categoriesQuery}>
                         {({ data, loading, error }) => {
-                            if (loading) return <p>Loading...</p>;
+                            if (loading) return <Loader/>;
                             if (error) return <p>Error</p>;
 
                             return (

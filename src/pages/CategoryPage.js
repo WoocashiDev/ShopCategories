@@ -3,6 +3,7 @@ import CategoryPageItem from '../components/pageComponents/CategoryPageItem';
 import { gql  } from '@apollo/client';
 import { Query } from '@apollo/client/react/components';
 import { withRouter } from '../utils.js';
+import Loader from '../components/pageComponents/Loader';
 
 
 const productsQuery = gql`
@@ -35,7 +36,7 @@ class CategoryPage extends Component {
                 
                     <Query query={productsQuery} variables={{name: this.props.router.params.name}}>
                         {({ data, loading, error }) => {
-                            if (loading) return <p>Loading...</p>;
+                            if (loading) return <Loader/>
                             if (error) return <p>Error</p>;
 
                             return (

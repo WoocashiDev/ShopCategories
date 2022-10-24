@@ -92,6 +92,7 @@
 .productpage-slider {
   display: flex;
   gap: 40px;
+  height: 511px;
 }
 .productpage-slider-image-main {
   width: 610px;
@@ -104,14 +105,18 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  overflow: scroll;
+  justify-content: stretch;
+  min-height: min-content;
 }
 .productpage-slider-image-min {
+  cursor: pointer;
   display: flex;
   justify-content: stretch;
   border: 1px transparent solid;
   position: relative;
   width: 79.5px;
-  height: 80px;
+  min-height: 80px;
   transition: 0.1s linear;
   background-position: center;
   background-size: cover;
@@ -134,6 +139,8 @@
     justify-content: center;
     align-items: center;
     gap: 50px;
+    /* Handle */
+    /* Handle on hover */
   }
   .productpage-product {
     flex-direction: column;
@@ -168,9 +175,36 @@
     flex-direction: row;
     justify-self: flex-start;
     gap: 20px;
+    min-height: 80px;
+    overflow: scroll;
+    align-items: stretch;
+    width: 511px;
+  }
+  .productpage-slider-image-min {
+    cursor: pointer;
+    display: flex;
+    justify-content: stretch;
+    border: 1px transparent solid;
+    position: relative;
+    min-width: 79.5px;
+    min-height: 80px;
+    transition: 0.1s linear;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .productpage div.productpage-slider-images-min::-webkit-scrollbar {
+    height: 5px;
+    width: 0;
+  }
+  .productpage div.productpage-slider-images-min::-webkit-scrollbar-thumb {
+    background: rgb(94, 206, 123);
+  }
+  .productpage div.productpage-slider-images-min::-webkit-scrollbar-thumb:hover {
+    background: rgb(88, 175, 111);
   }
 }
-@media (min-width: 992px) {
+@media (max-width: 991px) and (min-width: 992px) {
   .productpage {
     flex-direction: column;
     justify-content: center;
@@ -190,6 +224,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
+    height: 511px;
   }
   .productpage-slider-image-main {
     display: flex;
@@ -201,11 +236,15 @@
     height: auto;
   }
   .productpage-slider-images-min {
+    height: 511px;
+    display: flex;
     flex-direction: column;
     gap: 20px;
+    overflow: scroll;
+    justify-content: stretch;
   }
 }
-@media (min-width: 1280px) {
+@media (max-width: 991px) and (min-width: 1280px) {
   .productpage {
     flex-direction: row;
     justify-content: flex-start;
@@ -230,6 +269,7 @@
     justify-content: stretch;
     align-items: stretch;
     gap: 20px;
+    height: 511px;
   }
   .productpage-slider-image-main {
     display: flex;
@@ -240,8 +280,12 @@
     height: auto;
   }
   .productpage-slider-images-min {
+    height: 511px;
+    display: flex;
     flex-direction: column;
     gap: 20px;
+    overflow: scroll;
+    justify-content: stretch;
   }
 }
 /* HEADER LAYOUT COMPONENT */
@@ -293,6 +337,7 @@
 }
 .header-actions-cart {
   position: relative;
+  cursor: pointer;
 }
 .header-actions-cart-count {
   font-family: "Roboto", sans-serif;
@@ -366,6 +411,7 @@
   font-family: "Raleway";
   font-style: normal;
   font-weight: 400;
+  text-transform: capitalize;
 }
 .categorypage-items {
   margin-top: 80px;
@@ -533,6 +579,7 @@
   font-family: "Raleway";
   font-style: normal;
   font-weight: 400;
+  cursor: pointer;
   font-weight: 600;
   font-size: 16px;
   line-height: 19.2px;
@@ -555,6 +602,7 @@
   flex-wrap: wrap;
 }
 .product-colorbox {
+  cursor: pointer;
   width: 36px;
   height: 36px;
   border: 1px transparent solid;
@@ -584,9 +632,11 @@
 }
 .product-size {
   font-family: "Source Sans Pro", sans-serif;
+  cursor: pointer;
   font-size: 16px;
   line-height: 18px;
   letter-spacing: 0.05em;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -753,6 +803,136 @@
 .cartpage-order-btn:hover {
   background-color: rgb(88, 175, 111);
   box-shadow: 0 4px 35px 0 rgba(168, 172, 176, 0.19);
+}
+
+/** Container **/
+.animation-container {
+  display: flex;
+  flex-wrap: wrap;
+  color: rgb(94, 206, 123);
+}
+
+.cell {
+  flex-basis: 25%;
+  height: 50px;
+  width: 50px;
+  padding: 1.5em;
+}
+
+/** Global preloader styles **/
+.pl, .pl:before, .pl:after {
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.pl {
+  margin: 0 auto 1.5em auto;
+  position: relative;
+  width: 2em;
+  height: 2em;
+}
+
+.pl:before, .pl:after {
+  background: currentColor;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  transform-origin: 50% 100%;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+/* Spark */
+.pl-spark:before {
+  animation-name: scaleA;
+}
+
+.pl-spark:after {
+  animation-name: scaleB;
+}
+
+@keyframes scaleA {
+  from, 50%, to {
+    transform: scale(1);
+  }
+  25%, 75% {
+    transform: scale(-1);
+  }
+}
+@keyframes scaleB {
+  from, 50%, to {
+    transform: rotate(90deg) scale(0);
+  }
+  12.5%, 62.5% {
+    transform: rotate(90deg) scale(1);
+  }
+  37.5%, 87.5% {
+    transform: rotate(90deg) scale(-1);
+  }
+}
+/** Media queries **/
+@media screen and (min-width: 768px) {
+  .cell {
+    flex-basis: 33.33%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .cell {
+    flex-basis: 25%;
+  }
+}
+.overlay-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  background-color: rgba(57, 55, 72, 0.22);
+  z-index: 1000;
+}
+
+.cart-dropdown {
+  position: absolute;
+  top: 51px;
+  width: 325px;
+  right: 0;
+  background-color: white;
+  z-index: 2000;
+}
+.cart-dropdown-container {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 16px;
+  overflow-y: scroll;
+  max-height: 677px;
+}
+.cart-dropdown--title {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25.6px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(94, 206, 123);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(88, 175, 111);
 }
 
 /*# sourceMappingURL=App.css.map */

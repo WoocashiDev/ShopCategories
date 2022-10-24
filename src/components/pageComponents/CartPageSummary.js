@@ -22,14 +22,9 @@ class CartPageSummary extends Component {
     return taxValue.toFixed(2)
   }
 
-  calculateTotal = () => {
-    const total = parseFloat(this.calculateTax()) + parseFloat(this.calculateValue())
-    return total.toFixed(2)
-  }
-
 
   render() {
-    console.log(this.calculateQuantity())
+
     return (
 
         <div className="cartpage-summary">
@@ -41,7 +36,7 @@ class CartPageSummary extends Component {
         <div className="cartpage-summary-labels">
           <span><strong>${this.calculateTax()}</strong></span>
           <span><strong>{this.calculateQuantity()}</strong></span>
-          <span><strong>${this.calculateTotal()}</strong></span>
+          <span><strong>${this.calculateValue()}</strong></span>
         </div>
       </div>
           )

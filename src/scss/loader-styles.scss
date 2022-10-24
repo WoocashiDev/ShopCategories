@@ -1,0 +1,74 @@
+
+
+
+/** Container **/
+.animation-container {
+	display: flex;
+	flex-wrap: wrap;
+    color: $primary-color;
+}
+.cell {
+	flex-basis: 25%;
+    height: 50px;
+    width: 50px;
+	padding: 1.5em;
+}
+
+/** Global preloader styles **/
+.pl, .pl:before, .pl:after {
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+.pl {
+	margin: 0 auto 1.5em auto;
+	position: relative;
+	width: 2em;
+	height: 2em;
+}
+.pl:before, .pl:after {
+	background: currentColor;
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+	transform-origin: 50% 100%;	
+	clip-path: polygon(0 0,100% 0,50% 100%);
+	-webkit-clip-path: polygon(0 0,100% 0,50% 100%);
+}
+
+
+
+/* Spark */
+.pl-spark:before {
+	animation-name: scaleA;
+}
+.pl-spark:after {
+	animation-name: scaleB;
+}
+@keyframes scaleA {
+	from, 50%, to { transform: scale(1) }
+	25%, 75% { transform: scale(-1) }
+}
+@keyframes scaleB {
+	from, 50%, to { transform: rotate(90deg) scale(0) }
+	12.5%, 62.5% { transform: rotate(90deg) scale(1) }
+	37.5%, 87.5% { transform: rotate(90deg) scale(-1) }
+}
+
+
+
+/** Media queries **/
+@media screen and (min-width: 768px) {
+	.cell {
+		flex-basis: 33.33%;
+	}
+}
+@media screen and (min-width: 1280px) {
+	.cell {
+		flex-basis: 25%;
+	}
+}
