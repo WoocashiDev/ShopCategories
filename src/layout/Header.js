@@ -10,21 +10,39 @@ class Header extends Component {
     }
 
     toggleCart = () => {
-        this.setState({isCartActive: !this.state.isCartActive})
+        this.setState({
+            isCartActive: !this.state.isCartActive,
+            isCurrencyActive: false
+        })
+    }
+
+    toggleCurrency = () => {
+        this.setState({
+            isCurrencyActive: !this.state.isCurrencyActive,
+            isCartActive: false
+        })
+    }
+
+    hideDropdowns = () => {
+        this.setState({
+            isCurrencyActive: false,
+            isCartActive: false
+        })
     }
     render() {
         console.log(this.state)
         return (
             <>
-                {this.state.isCartActive ? <div onClick={()=>this.toggleCart() } className="overlay-container"> </div>:""}
+                {this.state.isCartActive ? <div onClick={() => this.toggleCart()} className="overlay-container"> </div> : ""}
+                {this.state.isCurrencyActive ? <div onClick={()=>this.toggleCurrency() } className="overlay-container-transparent"> </div>:""}
             <div className='bg-white'>
                 
                 
                 <div className="container-fixed on-top">
                 <header className="header">
-                    <Navigation/>
+                            <Navigation hideDropdowns={()=>this.hideDropdowns() } />
                     <Logo />
-                    <Actions onCartPress={()=>this.toggleCart()} isCartActive={this.state.isCartActive} isCurrencyActive={this.state.isCurrencyActive} />
+                    <Actions hideDropdowns={()=>this.hideDropdowns() } onCurrencyPress={()=>this.toggleCurrency()} onCartPress={()=>this.toggleCart()} isCartActive={this.state.isCartActive} isCurrencyActive={this.state.isCurrencyActive} />
                 </header>
                 </div>
                 </div>

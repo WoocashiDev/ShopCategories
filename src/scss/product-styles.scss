@@ -40,9 +40,13 @@
 
     &-description {
         @include secondary-font;
+        padding: 20px 0;
         font-weight: 400;
         font-size: 16px;
         line-height: 26px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     &-disabled-btn {

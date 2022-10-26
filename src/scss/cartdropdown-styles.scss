@@ -11,7 +11,7 @@
 
 .cart-dropdown {
     position: absolute;
-    top: 51px;
+    top: 43px;
     width: 325px;
     right: 0;
     background-color: white;
@@ -265,6 +265,8 @@
         align-items: center;
         justify-content: center;
         border: 1px solid rgb(67, 68, 69);
+        user-select: none;
+        cursor: pointer;
 
         & > img  {
             width: 8px;

@@ -1,10 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Roboto:wght@300;400;500;700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 
 /*SCSS Variables*/
 $primary-color: rgb(94, 206, 123);
@@ -96,6 +91,27 @@ $primary-color-darkened: rgb(88, 175, 111);
   background: white;
 }
 
+/*OVERLAY CONTAINERS FOR DROPDOWNS*/
+.overlay-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 80px;
+  left:0;
+  background-color: rgba(57, 55, 72, 0.22);
+  z-index: 1000;
+
+  &-transparent {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 80px;
+    left:0;
+    background-color: transparent;
+    z-index: 1000;
+  }
+}
+
 
 @import './pdppage-styles.scss';
 @import './header-styles.scss';
@@ -104,6 +120,7 @@ $primary-color-darkened: rgb(88, 175, 111);
 @import './cartpage-styles.scss';
 @import './loader-styles.scss';
 @import './cartdropdown-styles.scss';
+@import './currencydropdown-styles.scss';
 
 
 

@@ -4,8 +4,8 @@ class Loader extends Component {
     render() {
         return (
             <div className='animation-container'>
-            <div class="cell">
-		        <div class="pl pl-spark"></div>
+            <div className="cell">
+		        <div className="pl pl-spark"></div>
                 </div>
             </div>
         );

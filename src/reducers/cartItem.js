@@ -5,12 +5,13 @@ const cartItemReducer = (state=[], action)=> {
                 ...state, {
                     item: action.item,
                     selectedAttributes: action.attributes,
-                    quantity: 1
+                    quantity: 1,
+                    id: action.id
                 }
             ]
         case "CHANGE_QUANTITY":
             const changedItem = state.map(stateitem => {     
-                if (stateitem.item.name === action.itemName) {
+                if (stateitem.id === action.id) {
                     return {...stateitem, quantity: action.quantity}
                 }
                 return stateitem

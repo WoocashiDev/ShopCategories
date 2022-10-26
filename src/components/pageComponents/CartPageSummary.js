@@ -12,21 +12,20 @@ class CartPageSummary extends Component {
 
   calculateValue = () => {
     const value = this.props.cartItems.reduce((accumulator, object) => {
-      return accumulator + object.quantity*object.item.prices[0].amount
+      return accumulator + object.quantity*object.item.prices[this.props.activeCurrency.index].amount
     }, 0)
     return value.toFixed(2)
   }
 
   calculateTax = () => {
-    const taxValue = this.calculateValue() * 0.21
+    const taxValue = this.calculateValue(this.props.activeCurrency) * 0.21
     return taxValue.toFixed(2)
   }
 
 
   render() {
-
+    const {symbol} = this.props.activeCurrency
     return (
-
         <div className="cartpage-summary">
         <div className="cartpage-summary-labels">
           <span>Tax 21%</span>
@@ -34,9 +33,9 @@ class CartPageSummary extends Component {
           <span className="cartpage-summary-label-total">Total:</span>
         </div>
         <div className="cartpage-summary-labels">
-          <span><strong>${this.calculateTax()}</strong></span>
+          <span><strong>{symbol}{this.calculateTax()}</strong></span>
           <span><strong>{this.calculateQuantity()}</strong></span>
-          <span><strong>${this.calculateValue()}</strong></span>
+          <span><strong>{symbol}{this.calculateValue()}</strong></span>
         </div>
       </div>
           )
@@ -44,7 +43,8 @@ class CartPageSummary extends Component {
 }
 
 const mapStateToProps = state => ({
-  cartItems: state.cartItems
+  cartItems: state.cartItems,
+  activeCurrency: state.activeCurrency
 })
 
 export default connect(mapStateToProps, null) (CartPageSummary)

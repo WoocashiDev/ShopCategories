@@ -67,6 +67,8 @@ class ProductPageProduct extends Component {
 
         render() {
             const { name, brand, prices, attributes, description, inStock } = this.props.product
+
+            const {index,symbol} = this.props.activeCurrency
         
             return (
                 <div className='productpage-product'>
@@ -77,7 +79,7 @@ class ProductPageProduct extends Component {
                         ))}
                     
                         <ProductSectionTitle getAttributes={this.getAttributes} sectionTitle="Price:" />
-                        <ProductPrice currency={prices[0].currency.symbol} price={prices[0].amount} />
+                        <ProductPrice currency={symbol} price={prices[index].amount} />
 
                         
                         {inStock?<ProductPrimaryBtn onPress={() => this.addToCart()} text="Add to cart" />:<button className="product-disabled-btn">Out of stock</button>}
@@ -92,7 +94,8 @@ class ProductPageProduct extends Component {
 
 
 const mapStateToProps = state => ({
-    cartItems: state.cartItems
-})
-
-export default connect(mapStateToProps, {addItem}) (ProductPageProduct);
+    cartItems: state.cartItems,
+    activeCurrency: state.activeCurrency
+    })
+      
+    export default connect(mapStateToProps, {addItem}) (ProductPageProduct);

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import CartIcon from '../../assets/icons/category-cart.svg';
+import { connect } from 'react-redux';
 
 class CategoryPageItem extends Component {
 
     render() {
-        const {gallery, id, name, prices, inStock} = this.props.product
+        const { gallery, id, name, prices, inStock } = this.props.product
+        const {index, symbol} = this.props.activeCurrency
         return (
             <div className="categorypage-item">
                 <Link to={`/product/${id}`}>
@@ -18,11 +20,15 @@ class CategoryPageItem extends Component {
                 </div>
                 </Link>
                 <span className="categorypage-item--name">{name}</span>
-                <span className="categorypage-item--price">{prices[0].currency.symbol}{prices[0].amount}</span>
+                <span className="categorypage-item--price">{symbol}{prices[index].amount}</span>
                 
             </div>
         );
     }
 }
 
-export default CategoryPageItem;
+const mapStateToProps = state => ({
+    activeCurrency: state.activeCurrency
+  })
+
+export default connect(mapStateToProps,null) (CategoryPageItem);

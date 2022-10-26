@@ -41,7 +41,7 @@ class CartPageSlider extends Component {
 
     componentDidUpdate(prevProps, prevState) {
        if (this.state.quantity !== prevState.quantity) {
-           this.props.changeQuantity(this.props.item.name, this.state.quantity)
+           this.props.changeQuantity(this.props.item.name, this.state.quantity, this.props.itemId)
        }
     }
 

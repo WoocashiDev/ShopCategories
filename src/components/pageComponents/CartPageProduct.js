@@ -42,6 +42,7 @@ class CartPageProduct extends Component {
         const { name, brand, prices, attributes, gallery } = this.props.cartItem.item
         const { selectedAttributes } = this.props.cartItem
         const small = this.props.small
+        const {index, symbol} = this.props.activeCurrency
         
         return (
             <div className ={small?"small-cartpage-product":"cartpage-product"} >
@@ -49,13 +50,13 @@ class CartPageProduct extends Component {
                     <ProductTitle small={small} name={name} brand={brand} />
 
                     {small ? "" : <ProductSectionTitle getAttributes={this.getAttributes} sectionTitle="Price:" />}
-                    <ProductPrice small={small} currency={prices[0].currency.symbol} price={prices[0].amount} />
+                    <ProductPrice small={small} currency={prices[index].currency.symbol} price={prices[index].amount} />
                     
                     {attributes.map((attribute, key) => (
                             <CartPageSection small={small} selectedAttributes={selectedAttributes} onPress={(e) => this.selectAttribute(e)} key={key} attribute={attribute} />
                         ))}
                 </div>
-                <CartPageSlider small={small} quantity={this.props.cartItem.quantity} item={this.props.cartItem.item} gallery={gallery}/>
+                <CartPageSlider small={small} quantity={this.props.cartItem.quantity} itemId={this.props.cartItem.id} item={this.props.cartItem.item} gallery={gallery}/>
                 
             </div >
         );
@@ -63,7 +64,8 @@ class CartPageProduct extends Component {
 }
 
 const mapStateToProps = state => ({
-    cartItems: state.cartItems
+    cartItems: state.cartItems,
+    activeCurrency: state.activeCurrency
 })
 
 export default connect(mapStateToProps, null)(CartPageProduct);

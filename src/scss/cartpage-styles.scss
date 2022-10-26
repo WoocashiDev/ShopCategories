@@ -63,6 +63,9 @@
             align-items: center;
             justify-content: center;
             border: 1px solid rgb(67, 68, 69);
+            user-select: none;
+            cursor: pointer;
+            
 
             &:hover {
                 background-color: black;
@@ -109,6 +112,8 @@
                 height: 24px; 
                 background: rgba(0, 0, 0, 0.73);
                 transition: .1s linear;
+                user-select: none;
+                cursor:pointer;
 
                 &:hover {
                     background-color: $primary-color-darkened;

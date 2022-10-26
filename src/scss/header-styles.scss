@@ -48,7 +48,18 @@
     gap: 22px;
     
     width: 204px;
-    height: 40px;
+    height: 60px;
+
+    &-currency {
+      @include primary-font;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 28.8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
 
     &-cart {
       position: relative;
@@ -80,7 +91,7 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: center;
+        align-items: flex-end;
         padding: 0px 10px;
         gap: 12px;
       } 
@@ -96,6 +107,11 @@
     
     text-transform: uppercase;
     transition: .1s linear;
+
+    &-active {
+      color: $primary-color;
+      font-weight: 600;
+    }
   }
 
   &-border {
@@ -106,18 +122,21 @@
     flex: none;
     align-self: stretch;
     transition: .1s linear;
-    box-shadow: 0 4px 35px 0 rgba(168, 172, 176, 0.19)
+    box-shadow: 0 4px 35px 0 rgba(168, 172, 176, 0.19);
+
+    &-active {
+      color: $primary-color;
+      font-weight: 600;
+    }
   }
 }
 
 
-.header-navigation--item a:active > .navlink-text, 
 .header-navigation--item a:hover > .navlink-text {
     color: $primary-color;
     font-weight: 600;
 }
-
-.header-navigation--item a:active > .navlink-border, 
+ 
 .header-navigation--item a:hover > .navlink-border {
     background-color: $primary-color;
 }
