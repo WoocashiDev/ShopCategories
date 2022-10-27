@@ -9,6 +9,17 @@ import CurrencyDropdown from './CurrencyDropdown';
 
 class Actions extends Component {
 
+    calculateQuantity = () => {
+        if (this.props.cartItems) {
+            const quantity = this.props.cartItems.reduce((accumulator, object) => {
+                return accumulator + object.quantity
+            }, 0);
+            return quantity
+        } else {
+            return ""
+        }
+      }
+
     render() {
         const {onCartPress, onCurrencyPress, isCartActive, isCurrencyActive} = this.props
         return (
@@ -24,7 +35,7 @@ class Actions extends Component {
                     <div className="header-actions-cart">
                         <div onClick={onCartPress}><img src={cartSvg} alt="cart-icon" />
                         {this.props.cartItems.length === 0 ? "" : <div className="header-actions-cart-count">
-                            {this.props.cartItems.length}
+                            {this.calculateQuantity()}
                         </div>}</div>
                         {isCartActive?<CartDropdown hideDropdowns={this.props.hideDropdowns }/>:""}
                     </div>

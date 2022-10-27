@@ -20,6 +20,15 @@ class CartPageProduct extends Component {
         })
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if(prevProps !== this.props) {
+        this.setState({
+            selectedAttributes: this.props.cartItem.selectedAttributes,
+            item: this.props.cartItem.item
+        })
+        }
+    }
+
 
     selectAttribute = (e) => {
         const attributeValue = e.target.getAttribute("data-value")

@@ -21,17 +21,21 @@ class CartDropdown extends Component {
     
     render() {
         const cartItems = this.props.cartItems
-        const {index, symbol} = this.props.activeCurrency
+        const {symbol} = this.props.activeCurrency
         console.log()
         return (
                 <div className="cart-dropdown">
                     <div className='cart-dropdown-container'>
-                        <h4 className='cart-dropdown--title'><strong>My Bag</strong> {this.calculateQuantity()} items</h4>
-                        {cartItems.map((item, key) => (<CartPageProduct small={true} key={key} cartItem={item} />))}
+                    <h4 className='cart-dropdown--title'>
+                        <strong>My Bag</strong> {this.calculateQuantity()} items
+                    </h4>
+                        {cartItems.map((item) => (<CartPageProduct small={true} key={item.id} cartItem={item} />))}
                         <div className='cart-dropdown-summary'>
                             <div className='cart-dropdown-row'>
                                 <div className='cart-dropdown-total-label'>Total</div>
-                            <div className='cart-dropdown-total-amount'>{ symbol }{this.calculateValue()}</div>
+                            <div className='cart-dropdown-total-amount'>
+                                {symbol}{this.calculateValue()}
+                            </div>
                             </div>
                             <div className='cart-dropdown-row'>
                                 <Link onClick={()=>this.props.hideDropdowns()} to="/cart" className='cart-dropdown-button cart-dropdown-button-empty'>View Bag</Link>

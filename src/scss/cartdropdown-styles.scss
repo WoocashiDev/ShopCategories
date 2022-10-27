@@ -148,19 +148,20 @@
 
     &-colorbox {
         cursor: pointer;
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
         border: 1px transparent solid;
         position: relative;
         transition: .1s linear;
         box-shadow: 0 4px 35px 0 rgba(168, 172, 176, 0.6);
+        border: 3px transparent solid;
 
         &:hover {
-            border: 1px $primary-color solid;
+            border: 3px $primary-color solid;
         }
 
         &-active {
-            border: 1px $primary-color solid;
+            border: 3px $primary-color solid;
         }
     }
 
@@ -170,7 +171,6 @@
         position: absolute;
         left: 1px;
         top: 1px;
-        background-color: blue;
     }
 
     &-sizes {

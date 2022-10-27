@@ -102,19 +102,20 @@
             position: relative;
             transition: .1s linear;
             box-shadow: 0 4px 35px 0 rgba(168, 172, 176, 0.6);
+            border: 3px transparent solid;
 
             &:hover {
-                border: 1px $primary-color solid;
+                border: 3px $primary-color solid;
             }
 
             &-active {
-                border: 1px $primary-color solid;
+                border: 3px $primary-color solid;
             }
         }
 
         &-color {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             position: absolute;
             left: 1px;
             top: 1px;
