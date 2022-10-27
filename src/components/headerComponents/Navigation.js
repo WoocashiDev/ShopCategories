@@ -28,9 +28,8 @@ class Navigation extends Component {
                                 <ul className='header-navigation--items'>
                                     {data.categories.map(category => (
                                         <li key={category.name} className='header-navigation--item'>
-                                            <NavLink to={`/category/${category.name}`}>
-                                            <span className='navlink-text'>{category.name}</span>
-                                            <span className="navlink-border"></span>
+                                            <NavLink className="navlink-text" activeClassName="navlink-text" to={`/category/${category.name}`}>
+                                            {category.name}
                                             </NavLink>
                                         </li>
                                     ))}
