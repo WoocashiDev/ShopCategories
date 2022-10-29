@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Navigation from '../components/headerComponents/Navigation'
-import Logo from '../components/headerComponents/Logo'
-import Actions from '../components/headerComponents/Actions';
+import Navigation from './Navigation'
+import Logo from './Logo'
+import Actions from './Actions';
 
 class Header extends Component {
     state = {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ProductTitle from './ProductTitle';
-import ProductSectionTitle from './ProductSectionTitle';
+import ProductTitle from '../commonComponents/ProductTitle';
+import ProductSectionTitle from '../commonComponents/ProductSectionTitle';
 import ProductPrice from './ProductPrice';
 import ProductPrimaryBtn from './ProductPrimaryBtn';
 import ProductDescription from './ProductDescription';

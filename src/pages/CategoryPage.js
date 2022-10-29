@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import CategoryPageItem from '../components/pageComponents/CategoryPageItem';
+import CategoryPageItem from '../components/categoryPageComponents/CategoryPageItem';
 import { gql  } from '@apollo/client';
 import { Query } from '@apollo/client/react/components';
 import { withRouter } from '../utils.js';
-import Loader from '../components/pageComponents/Loader';
+import Loader from '../components/commonComponents/Loader';
 
 
 const productsQuery = gql`

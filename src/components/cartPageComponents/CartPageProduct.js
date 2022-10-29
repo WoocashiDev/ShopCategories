@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ProductTitle from './ProductTitle';
-import ProductSectionTitle from './ProductSectionTitle';
-import ProductPrice from './ProductPrice';
+import ProductTitle from '../commonComponents/ProductTitle';
+import ProductSectionTitle from '../commonComponents/ProductSectionTitle';
+import ProductPrice from '../productPageComponents/ProductPrice';
 import CartPageSlider from './CartPageSlider';
 import CartPageSection from './CartPageSection';
 import { connect } from "react-redux";

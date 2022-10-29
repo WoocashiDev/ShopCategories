@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import ProductPageProduct from '../components/pageComponents/ProductPageProduct';
-import ProductPageSlider from '../components/pageComponents/ProductPageSlider';
+import ProductPageProduct from '../components/productPageComponents/ProductPageProduct';
+import ProductPageSlider from '../components/productPageComponents/ProductPageSlider';
 import { gql  } from '@apollo/client';
 import { Query } from '@apollo/client/react/components';
 import { withRouter } from '../utils';
-import Loader from '../components/pageComponents/Loader';
+import Loader from '../components/commonComponents/Loader';
 
 
 const productQuery = gql`

@@ -5,7 +5,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import CategoryPage from './pages/CategoryPage';
 import PDPPage from './pages/PDPPage';
 import CartPage from './pages/CartPage';
-import Header from './layout/Header';
+import Header from './components/headerComponents/Header';
 
 export default class App extends Component {
   render() {

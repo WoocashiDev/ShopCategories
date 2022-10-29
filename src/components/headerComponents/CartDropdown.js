@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CartPageProduct from '../pageComponents/CartPageProduct';
+import CartPageProduct from '../cartPageComponents/CartPageProduct';
 import { Link } from 'react-router-dom';
 
 class CartDropdown extends Component {

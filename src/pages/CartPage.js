@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CartPageProduct from '../components/pageComponents/CartPageProduct';
-import CartPageOrderBtn from '../components/pageComponents/CartPageOrderBtn';
-import CartPageSummary from '../components/pageComponents/CartPageSummary';
+import CartPageProduct from '../components/cartPageComponents/CartPageProduct';
+import CartPageOrderBtn from '../components/cartPageComponents/CartPageOrderBtn';
+import CartPageSummary from '../components/cartPageComponents/CartPageSummary';
 import { connect } from 'react-redux';
 
 

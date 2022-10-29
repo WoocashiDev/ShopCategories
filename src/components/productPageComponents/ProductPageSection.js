@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ProductSizes from './ProductSizes';
-import ProductColors from './ProductColors';
+import ProductSizes from '../commonComponents/ProductSizes';
+import ProductColors from '../commonComponents/ProductColors';
 
 
 class ProductPageSection extends Component {
