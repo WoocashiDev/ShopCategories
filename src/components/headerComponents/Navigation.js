@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 import { Query } from '@apollo/client/react/components';
 import { gql } from '@apollo/client';
-import Loader from '../pageComponents/Loader';
+import Loader from '../commonComponents/Loader';
 
 
 class Navigation extends Component {
