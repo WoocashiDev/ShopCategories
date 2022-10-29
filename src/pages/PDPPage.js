@@ -4,6 +4,7 @@ import ProductPageSlider from '../components/pageComponents/ProductPageSlider';
 import { gql  } from '@apollo/client';
 import { Query } from '@apollo/client/react/components';
 import { withRouter } from '../utils';
+import Loader from '../components/pageComponents/Loader';
 
 
 const productQuery = gql`
@@ -47,7 +48,7 @@ class PDPPage extends Component {
         <Query fetchPolicy='network-only' query={productQuery} variables={{ id: this.props.router.params.id }}>
 
           {({ data, loading, error }) => {
-            if (loading) return <p>Loading...</p>;
+            if (loading) return <Loader/>;
             if (error) return <p>Error</p>;
             return (
               <>

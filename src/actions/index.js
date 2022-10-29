@@ -18,16 +18,18 @@ export const changeQuantity = (item, quantity,id) => {
     }
 }
 
-export const removeItem = (newState) => {
-    return {
-        type: 'REMOVE_ITEM',
-        payload: newState
-    }
-}
-
 export const switchCurrency = (currencyIndex, currencySymbol) => {
     return {
         type: 'SWITCH_CURRENCY',
         payload: {index: currencyIndex, symbol:currencySymbol}
+    }
+}
+
+export const changeAttributes = (item, attributes,id) => {
+    return {
+        type: 'CHANGE_ATTRIBUTES',
+        itemName: item,
+        attributes: attributes,
+        id: id
     }
 }

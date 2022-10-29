@@ -9,17 +9,20 @@ class CartPageSection extends Component {
         value: ""
     }
 
-    selectedValue = this.props.selectedAttributes.filter(attribute => {
-        return attribute.name === this.props.attribute.name
-    })
+    getSelectedValue = () => {
+        const selectedValue = this.props.selectedAttributes.filter(attribute => {
+            return attribute.name === this.props.attribute.name
+        })
+        return selectedValue[0]
+    }
 
     componentDidMount() {
-        this.setState({value: this.selectedValue[0].value})
+        this.setState({value: this.getSelectedValue().value})
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if (this.props.attribute !== prevProps.attribute) {
-            this.setState({value: this.selectedValue[0].value})
+        if (this.props !== prevProps) {
+            this.setState({value: this.getSelectedValue().value})
         }
     }
 

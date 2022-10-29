@@ -5,6 +5,7 @@ import ProductPrice from './ProductPrice';
 import CartPageSlider from './CartPageSlider';
 import CartPageSection from './CartPageSection';
 import { connect } from "react-redux";
+import { changeAttributes } from '../../actions/index';
 
 class CartPageProduct extends Component {
 
@@ -44,14 +45,15 @@ class CartPageProduct extends Component {
             } else return {name: attr.name, value:attr.value}
         })
 
-       this.setState({selectedAttributes:newState})
+        this.setState({ selectedAttributes: newState })
+        this.props.changeAttributes(this.props.cartItem.item, newState, this.props.cartItem.id)
     }
     
     render() {
         const { name, brand, prices, attributes, gallery } = this.props.cartItem.item
         const { selectedAttributes } = this.props.cartItem
         const small = this.props.small
-        const {index, symbol} = this.props.activeCurrency
+        const {index} = this.props.activeCurrency
         
         return (
             <div className ={small?"small-cartpage-product":"cartpage-product"} >
@@ -77,4 +79,4 @@ const mapStateToProps = state => ({
     activeCurrency: state.activeCurrency
 })
 
-export default connect(mapStateToProps, null)(CartPageProduct);
+export default connect(mapStateToProps, {changeAttributes})(CartPageProduct);

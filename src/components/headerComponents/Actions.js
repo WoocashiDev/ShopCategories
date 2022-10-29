@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import cartSvg from '../../assets/icons/cart.svg';
 import currencySvg from '../../assets/icons/currency-arrow.svg';
 import { connect } from "react-redux";

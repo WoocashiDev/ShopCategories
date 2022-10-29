@@ -15,6 +15,16 @@ const productsQuery = gql`
                 name
                 inStock
                 gallery
+                attributes {
+                  id
+                  name
+                  type
+                  items {
+                    displayValue
+                    value
+                    id
+                  }
+                }
                 prices {
                     amount
                     currency {
@@ -31,7 +41,8 @@ class CategoryPage extends Component {
 
     render() {
             return (
-                <div className="container categorypage">
+                <div className="container">
+                    <div className='categorypage'>
                     <h1 className="categorypage-title">{this.props.router.params.name}</h1>
                 
                     <Query query={productsQuery} variables={{name: this.props.router.params.name}}>
@@ -41,11 +52,12 @@ class CategoryPage extends Component {
 
                             return (
                                 <div className="categorypage-items">
-                                    {data.category.products.map((product, key) => (<CategoryPageItem key={key} product={product} />))}
+                                    {data.category.products.map((product, key) => (<CategoryPageItem router={this.props.router} key={key} product={product} />))}
                                 </div>
                             )
                         }}
-                    </Query>
+                        </Query>
+                        </div>
                 </div>
             )
     }

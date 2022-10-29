@@ -30,7 +30,6 @@ class Header extends Component {
         })
     }
     render() {
-        console.log(this.state)
         return (
             <>
                 {this.state.isCartActive ? <div onClick={() => this.toggleCart()} className="overlay-container"> </div> : ""}

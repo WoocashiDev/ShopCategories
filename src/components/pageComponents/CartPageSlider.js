@@ -4,7 +4,7 @@ import ArrowRight from "../../assets/icons/arrow-right.svg";
 import PlusIcon from "../../assets/icons/plus.svg";
 import MinusIcon from "../../assets/icons/minus.svg";
 import {connect} from 'react-redux';
-import { changeQuantity, removeItem } from '../../actions/index';
+import { changeQuantity } from '../../actions/index';
 
 class CartPageSlider extends Component {
 
@@ -85,4 +85,4 @@ const mapStateToProps = state => ({
     cartItems: state.cartItems
 })
 
-export default connect(mapStateToProps, {changeQuantity, removeItem}) (CartPageSlider);
+export default connect(mapStateToProps, {changeQuantity}) (CartPageSlider);

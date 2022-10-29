@@ -7,8 +7,6 @@ import { connect } from 'react-redux';
 
 class CartPage extends Component {
 
-
-
   
   render() {
     const cartItems = this.props.cartItems

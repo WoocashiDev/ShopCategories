@@ -82,7 +82,7 @@ class ProductPageProduct extends Component {
                         <ProductPrice currency={symbol} price={prices[index].amount} />
 
                         
-                        {inStock?<ProductPrimaryBtn onPress={() => this.addToCart()} text="Add to cart" />:<button className="product-disabled-btn">Out of stock</button>}
+                        {inStock?<ProductPrimaryBtn attributes={this.state.selectedAttributes} onPress={() => this.addToCart()} text="Add to cart" />:<button className="product-disabled-btn">Out of stock</button>}
                     
                         <ProductDescription description={description} />
 

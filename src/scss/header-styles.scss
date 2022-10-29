@@ -59,6 +59,7 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
+      cursor: pointer;
     }
 
     &-cart {
@@ -107,7 +108,7 @@
     
     text-transform: uppercase;
     transition: .1s linear;
-    border-bottom: 1px solid transparent;
+    border-bottom: 3px solid transparent;
     padding: 0 16px;
     display: flex;
     align-items: flex-start;
@@ -115,19 +116,11 @@
 
   }
 }
-
-
-.header-navigation--item .navlink-text:hover {
-    color: $primary-color;
-    font-weight: 600;
-}
  
-.header-navigation--item a:hover > .navlink-border {
-    background-color: $primary-color;
-}
 
-.header-navigation--item .active {
-    border-bottom: 2px solid $primary-color;
+.header-navigation--item .active,
+.header-navigation--item .navlink-text:hover{
+    border-bottom: 3px solid $primary-color;
     color: $primary-color;
     font-weight: 600;
 }

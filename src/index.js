@@ -13,7 +13,6 @@ const store = configureStore({
   devTools: window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 });
 
-store.subscribe(()=> console.log(store.getState()))
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000/',
