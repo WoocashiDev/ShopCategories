@@ -1,3 +1,11 @@
+# Apollo server 
+
+Before running this app please make sure to run Apollo server on port:4000 with proper endpoints
+
+# Editing SCSS files
+
+to edit styles please make sure to import any scss file to styles.scss - this file will be watched after you run "npm run sass"
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
