@@ -4,7 +4,6 @@
     background-color: white;
     display: flex;
     height: 80px;
-    width: 100%;
     align-items: center;
     justify-content: space-between;
 
@@ -123,4 +122,36 @@
     border-bottom: 3px solid $primary-color;
     color: $primary-color;
     font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .navlink {
+    &-text {
+      @include primary-font;
+      font-size: 13px;
+      line-height: 20px;
+      /* identical to box height, or 19px */
+      
+      text-transform: uppercase;
+      transition: .1s linear;
+      border-bottom: 3px solid transparent;
+      padding: 0 13px;
+      display: flex;
+      align-items: flex-start;
+      height:44px;
+  
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px;
+    gap: 14px;
+    
+    max-width: 204px;
+    height: 60px;
+  }
 }

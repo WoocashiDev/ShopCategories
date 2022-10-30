@@ -125,8 +125,32 @@
     opacity: 100%;
   }
   
+  @media (max-width: 768px) {
+    .categorypage-items {
+      justify-content: center;
+    }
+    .categorypage-item{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 16px;
+      transition: linear .1s;
+  
+      width: 340px;
 
-  @media (max-width: 1280px) {
+      &--image {
+        width: 340px;
+        height: 320px;
+      }
+
+      &--soldout {
+        width: 340px;
+      }
+      }
+}
+
+  @media (min-width: 768px) {
       .categorypage-items {
         margin-top: 80px;
         margin-bottom: 80px;
